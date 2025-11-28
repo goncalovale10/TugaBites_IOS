@@ -1,0 +1,494 @@
+[
+  // ============================
+  // ENTRADAS
+  // ============================
+  {
+    "id": 1,
+    "type": "Appetizer",
+    "name": "Pataniscas de Bacalhau",
+    "image": "pataniscas",
+    "time": 40,
+    "difficulty": "Easy",
+    "kcal": 300,
+    "ingredients": [
+      "250 g shredded salted cod (desalted)",
+      "1 small onion, chopped",
+      "2 eggs",
+      "120 g flour",
+      "150 ml water or milk",
+      "Parsley, chopped",
+      "Salt and pepper",
+      "Oil for frying"
+    ],
+    "preparation": [
+      "Mix cod, onion, parsley and flour.",
+      "Add eggs and water until batter is thick.",
+      "Season with salt and pepper.",
+      "Fry spoonfuls of batter in hot oil until golden."
+    ]
+  },
+
+  {
+    "id": 2,
+    "type": "Appetizer",
+    "name": "Moelas Estufadas",
+    "image": "moelas",
+    "time": 75,
+    "difficulty": "Medium",
+    "kcal": 350,
+    "ingredients": [
+      "800 g chicken gizzards",
+      "1 onion, chopped",
+      "3 garlic cloves",
+      "100 ml white wine",
+      "2 tbsp tomato paste",
+      "1 bay leaf",
+      "2 tbsp olive oil",
+      "Salt and pepper",
+      "Fresh parsley"
+    ],
+    "preparation": [
+      "Sauté onion and garlic.",
+      "Add gizzards and brown.",
+      "Add wine, tomato paste, bay leaf, salt and pepper.",
+      "Simmer for 60 minutes until tender.",
+      "Serve with chopped parsley."
+    ]
+  },
+
+  {
+    "id": 3,
+    "type": "Appetizer",
+    "name": "Salada de Polvo",
+    "image": "salada-polvo",
+    "time": 60,
+    "difficulty": "Medium",
+    "kcal": 250,
+    "ingredients": [
+      "1 kg octopus",
+      "1 onion",
+      "2 garlic cloves",
+      "Olive oil",
+      "Vinegar or lemon juice",
+      "Parsley",
+      "Salt and pepper"
+    ],
+    "preparation": [
+      "Boil octopus until tender.",
+      "Cut into pieces.",
+      "Mix with chopped onion, garlic, parsley, olive oil and vinegar.",
+      "Season and chill before serving."
+    ]
+  },
+
+  // ============================
+  // SNACKS
+  // ============================
+  {
+    "id": 4,
+    "type": "Snack",
+    "name": "Pimentos Padrón",
+    "image": "pimentos-padron",
+    "time": 10,
+    "difficulty": "Easy",
+    "kcal": 120,
+    "ingredients": [
+      "300 g padrón peppers",
+      "Olive oil",
+      "Coarse salt"
+    ],
+    "preparation": [
+      "Heat olive oil in a pan.",
+      "Add peppers and cook until blistered.",
+      "Sprinkle with coarse salt and serve immediately."
+    ]
+  },
+
+  {
+    "id": 5,
+    "type": "Snack",
+    "name": "Tábua de Queijos e Enchidos",
+    "image": "tabua-queijos",
+    "time": 5,
+    "difficulty": "Easy",
+    "kcal": 450,
+    "ingredients": [
+      "Serra cheese",
+      "Flamengo cheese",
+      "Chouriço",
+      "Salpicão",
+      "Bread"
+    ],
+    "preparation": [
+      "Slice cheeses and meats.",
+      "Arrange on a board with bread.",
+      "Serve at room temperature."
+    ]
+  },
+
+  // ============================
+  // SOPAS
+  // ============================
+  {
+    "id": 6,
+    "type": "Soup",
+    "name": "Caldo Verde",
+    "image": "caldo-verde",
+    "time": 40,
+    "difficulty": "Easy",
+    "kcal": 180,
+    "ingredients": [
+      "300 g potatoes",
+      "1 onion",
+      "2 garlic cloves",
+      "150 g kale",
+      "100 g chouriço",
+      "1.2 L water",
+      "3 tbsp olive oil",
+      "Salt and pepper"
+    ],
+    "preparation": [
+      "Cook potatoes, onion, and garlic.",
+      "Blend.",
+      "Add kale and chouriço; cook 10 min.",
+      "Finish with olive oil."
+    ]
+  },
+
+  // ============================
+  // PRATOS DE CARNE
+  // ============================
+  {
+    "id": 7,
+    "type": "Meat",
+    "name": "Carne de Porco à Alentejana",
+    "image": "carne-de-porco-a-alentejana-1",
+    "time": 60,
+    "difficulty": "Medium",
+    "kcal": 650,
+    "ingredients": [
+      "800 g pork meat",
+      "500 g clams",
+      "4 garlic cloves",
+      "1 bay leaf",
+      "1 tbsp paprika",
+      "150 ml white wine",
+      "2 tbsp olive oil",
+      "4 potatoes",
+      "Salt and pepper"
+    ],
+    "preparation": [
+      "Marinate pork.",
+      "Fry potatoes.",
+      "Brown pork.",
+      "Add clams.",
+      "Mix potatoes and serve."
+    ]
+  },
+
+  {
+    "id": 8,
+    "type": "Meat",
+    "name": "Rojões à Moda do Minho",
+    "image": "rojoes",
+    "time": 75,
+    "difficulty": "Medium",
+    "kcal": 700,
+    "ingredients": [
+      "800 g pork",
+      "4 garlic cloves",
+      "150 ml white wine",
+      "1 tbsp vinegar",
+      "2 bay leaves",
+      "1 tbsp paprika",
+      "600 g potatoes",
+      "Salt and pepper"
+    ],
+    "preparation": [
+      "Marinate pork 1h.",
+      "Fry potatoes.",
+      "Fry pork.",
+      "Reduce sauce.",
+      "Mix potatoes."
+    ]
+  },
+
+  {
+    "id": 9,
+    "type": "Meat",
+    "name": "Feijoada à Transmontana",
+    "image": "feijoada-a-transmontana",
+    "time": 120,
+    "difficulty": "Hard",
+    "kcal": 750,
+    "ingredients": [
+      "400 g beans",
+      "400 g pork",
+      "200 g smoked sausage",
+      "100 g blood sausage",
+      "150 g bacon",
+      "1 onion",
+      "2 garlic cloves",
+      "2 tbsp tomato paste",
+      "Salt and pepper"
+    ],
+    "preparation": [
+      "Cook beans.",
+      "Brown meats.",
+      "Add vegetables and beans.",
+      "Simmer 40–50 min."
+    ]
+  },
+
+  {
+    "id": 10,
+    "type": "Meat",
+    "name": "Leitão à Bairrada",
+    "image": "leitao-bairrada",
+    "time": 150,
+    "difficulty": "Hard",
+    "kcal": 850,
+    "ingredients": [
+      "1 suckling pig",
+      "Garlic",
+      "Salt and pepper",
+      "Paprika",
+      "Olive oil",
+      "White wine"
+    ],
+    "preparation": [
+      "Season pig.",
+      "Marinate.",
+      "Roast at 200°C.",
+      "Crisp at 220°C."
+    ]
+  },
+
+  // ============================
+  // PRATOS DE PEIXE / MARISCO
+  // ============================
+  {
+    "id": 11,
+    "type": "Fish",
+    "name": "Bacalhau à Brás",
+    "image": "bacalhau-a-bras",
+    "time": 40,
+    "difficulty": "Medium",
+    "kcal": 480,
+    "ingredients": [
+      "400 g salted cod",
+      "500 g potatoes",
+      "1 onion",
+      "2 garlic cloves",
+      "4 eggs"
+    ],
+    "preparation": [
+      "Shred cod.",
+      "Fry potatoes.",
+      "Sauté onion and garlic.",
+      "Add cod and eggs."
+    ]
+  },
+
+  {
+    "id": 12,
+    "type": "Fish",
+    "name": "Bacalhau à Gomes de Sá",
+    "image": "Bacalhau-a-Gomes-de-Sa",
+    "time": 60,
+    "difficulty": "Medium",
+    "kcal": 500,
+    "ingredients": [
+      "600 g cod",
+      "800 g potatoes",
+      "2 onions",
+      "3 eggs",
+      "Olive oil"
+    ],
+    "preparation": [
+      "Cook cod.",
+      "Boil potatoes.",
+      "Layer potatoes, cod, and onions.",
+      "Bake 20–25 min."
+    ]
+  },
+
+  {
+    "id": 13,
+    "type": "Fish",
+    "name": "Bacalhau com Natas",
+    "image": "bacalhau com natas",
+    "time": 60,
+    "difficulty": "Medium",
+    "kcal": 650,
+    "ingredients": [
+      "400 g cod",
+      "600 g potatoes",
+      "1 onion",
+      "40 g butter",
+      "40 g flour",
+      "Milk and cream"
+    ],
+    "preparation": [
+      "Fry potatoes.",
+      "Sauté onion with cod.",
+      "Make béchamel.",
+      "Mix everything.",
+      "Bake until golden."
+    ]
+  },
+
+  {
+    "id": 14,
+    "type": "Fish",
+    "name": "Arroz de Marisco",
+    "image": "arroz-de-marisco",
+    "time": 60,
+    "difficulty": "Medium",
+    "kcal": 600,
+    "ingredients": [
+      "500 g seafood",
+      "400 g rice",
+      "1 onion",
+      "1 tomato",
+      "1 red pepper"
+    ],
+    "preparation": [
+      "Prepare base.",
+      "Add wine and stock.",
+      "Add rice.",
+      "Add seafood."
+    ]
+  },
+
+  {
+    "id": 15,
+    "type": "Fish",
+    "name": "Polvo à Lagareiro",
+    "image": "polvo-a-lagareiro",
+    "time": 90,
+    "difficulty": "Medium",
+    "kcal": 550,
+    "ingredients": [
+      "1 kg octopus",
+      "800 g potatoes",
+      "4 garlic cloves",
+      "Olive oil"
+    ],
+    "preparation": [
+      "Boil octopus.",
+      "Roast potatoes.",
+      "Bake with garlic oil."
+    ]
+  },
+
+  // ============================
+  // SOBREMESAS
+  // ============================
+  {
+    "id": 16,
+    "type": "Dessert",
+    "name": "Arroz Doce",
+    "image": "arroz-doce",
+    "time": 50,
+    "difficulty": "Easy",
+    "kcal": 280,
+    "ingredients": [
+      "200 g rice",
+      "1 L milk",
+      "150 g sugar",
+      "Cinnamon",
+      "Lemon peel"
+    ],
+    "preparation": [
+      "Cook rice with water and lemon peel.",
+      "Add milk gradually.",
+      "Add sugar.",
+      "Finish with egg yolks."
+    ]
+  },
+
+  {
+    "id": 17,
+    "type": "Dessert",
+    "name": "Pastéis de Nata",
+    "image": "pasteis-nata",
+    "time": 60,
+    "difficulty": "Medium",
+    "kcal": 290,
+    "ingredients": [
+      "Puff pastry",
+      "Milk",
+      "Sugar",
+      "Flour",
+      "Egg yolks"
+    ],
+    "preparation": [
+      "Make custard.",
+      "Fill pastry.",
+      "Bake at high heat."
+    ]
+  },
+
+  {
+    "id": 18,
+    "type": "Dessert",
+    "name": "Leite Creme",
+    "image": "leite-creme",
+    "time": 30,
+    "difficulty": "Easy",
+    "kcal": 250,
+    "ingredients": [
+      "500 ml milk",
+      "Sugar",
+      "Egg yolks",
+      "Cornstarch"
+    ],
+    "preparation": [
+      "Heat milk.",
+      "Mix with yolks and sugar.",
+      "Cook until thick.",
+      "Caramelize top."
+    ]
+  },
+
+  {
+    "id": 19,
+    "type": "Dessert",
+    "name": "Pão de Ló",
+    "image": "pao-lo",
+    "time": 45,
+    "difficulty": "Medium",
+    "kcal": 220,
+    "ingredients": [
+      "6 eggs",
+      "150 g sugar",
+      "75 g flour"
+    ],
+    "preparation": [
+      "Beat eggs and sugar.",
+      "Fold flour.",
+      "Bake 25–30 minutes."
+    ]
+  },
+
+  {
+    "id": 20,
+    "type": "Dessert",
+    "name": "Baba de Camelo",
+    "image": "baba-camelo",
+    "time": 20,
+    "difficulty": "Easy",
+    "kcal": 300,
+    "ingredients": [
+      "1 can condensed milk",
+      "4 eggs"
+    ],
+    "preparation": [
+      "Caramelize condensed milk.",
+      "Mix with yolks.",
+      "Fold egg whites.",
+      "Chill."
+    ]
+  }
+]
