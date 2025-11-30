@@ -19,6 +19,12 @@ final class FavoritesStore: ObservableObject {
         save()
     }
 
+    func isFavorite(_ recipe: Recipe) -> Bool {
+        favoriteIDs.contains(recipe.id)
+    }
+
+    // MARK: - Persistence
+
     private func save() {
         let array = Array(favoriteIDs)
         UserDefaults.standard.set(array, forKey: key)

@@ -1,4 +1,3 @@
-
 import SwiftUI
 
 struct RecipeListView: View {
@@ -7,12 +6,14 @@ struct RecipeListView: View {
     @StateObject private var vm: RecipeListViewModel
 
     init() {
+        // Criamos o StateObject com um viewModel VAZIO/placeholder
         _vm = StateObject(wrappedValue: RecipeListViewModel(repo: LocalRecipeRepository()))
     }
 
     var body: some View {
         VStack {
             searchAndFilter
+
             List(vm.filtered) { recipe in
                 NavigationLink(value: recipe) {
                     RecipeRow(recipe: recipe)
@@ -22,17 +23,12 @@ struct RecipeListView: View {
         }
         .navigationTitle("Recipes")
         .onAppear {
-            // Re-bind to shared repo when view appears (since init used a temp one for @StateObject creation)
-            if let shared = _repo {
-                // no-op in this minimal sample
-                // a more elaborate solution would pass the repo through init
-            }
-        }
-        .environmentObject(favorites)
-        .onReceive(repo.$recipes) { _ in
-            // trigger pipeline in vm via published updates
+            // Atualiza o viewModel para usar o repo REAL da app
+            vm.setRepository(repo)
         }
     }
+
+    // MARK: - Search + Filter UI
 
     private var searchAndFilter: some View {
         VStack {
@@ -47,6 +43,7 @@ struct RecipeListView: View {
                     } label: {
                         Chip(text: "All", selected: vm.selectedCategory == nil)
                     }
+
                     ForEach(Category.allCases) { cat in
                         Button {
                             vm.selectedCategory = cat
@@ -65,10 +62,12 @@ struct RecipeListView: View {
 private struct Chip: View {
     let text: String
     let selected: Bool
+
     var body: some View {
         Text(text)
-            .padding(.horizontal, 12).padding(.vertical, 6)
-            .background(selected ? Color.accentColor.opacity(0.2) : Color.secondary.opacity(0.1))
+            .padding(.horizontal, 12)
+            .padding(.vertical, 6)
+            .background(selected ? Color.accentColor.opacity(0.25) : Color.secondary.opacity(0.1))
             .clipShape(Capsule())
     }
 }

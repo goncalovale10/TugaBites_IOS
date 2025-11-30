@@ -1,4 +1,3 @@
-
 import SwiftUI
 
 struct RootTabView: View {
@@ -8,18 +7,23 @@ struct RootTabView: View {
     var body: some View {
         NavigationStack {
             TabView {
-                HomeView()
-                    .tabItem { Label("Home", systemImage: "house") }
 
-                RecipeListView()
-                    .tabItem { Label("Recipes", systemImage: "list.bullet") }
+                HomeView()
+                    .tabItem {
+                        Label("Home", systemImage: "house.fill")
+                    }
 
                 SearchView()
-                    .tabItem { Label("Search", systemImage: "magnifyingglass") }
+                    .tabItem {
+                        Label("Explore", systemImage: "magnifyingglass")
+                    }
 
                 FavoritesView()
-                    .tabItem { Label("Favorites", systemImage: "heart") }
+                    .tabItem {
+                        Label("Favorites", systemImage: "heart.fill")
+                    }
             }
+            .tint(Color.green) // cor do tab bar caso queiras
             .navigationDestination(for: Recipe.self) { recipe in
                 RecipeDetailView(recipe: recipe)
             }

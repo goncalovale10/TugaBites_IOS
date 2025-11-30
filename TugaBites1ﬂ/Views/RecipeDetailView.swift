@@ -1,4 +1,3 @@
-
 import SwiftUI
 
 struct RecipeDetailView: View {
@@ -9,6 +8,8 @@ struct RecipeDetailView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
+
+                // IMAGEM PRINCIPAL
                 Image(recipe.imageName)
                     .resizable()
                     .scaledToFill()
@@ -19,6 +20,7 @@ struct RecipeDetailView: View {
                             favorites.toggle(recipe)
                         } label: {
                             Image(systemName: favorites.isFavorite(recipe) ? "heart.fill" : "heart")
+                                .foregroundColor(.red)
                                 .padding(8)
                                 .background(.thinMaterial)
                                 .clipShape(Circle())
@@ -26,6 +28,7 @@ struct RecipeDetailView: View {
                         }
                     }
 
+                // TEMPO + KCAL
                 HStack(spacing: 16) {
                     Label("\(recipe.prepTimeMinutes) min", systemImage: "clock")
                     Label("\(recipe.calories) kcal", systemImage: "flame")
@@ -33,19 +36,19 @@ struct RecipeDetailView: View {
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
 
+                // INGREDIENTES
                 Text("Ingredients")
                     .font(.title2.bold())
-                ForEach(recipe.ingredients) { ing in
-                    HStack {
-                        Text("• \(ing.name)")
-                        Spacer()
-                        Text(ing.quantity).foregroundStyle(.secondary)
-                    }
-                    .font(.body)
+
+                ForEach(recipe.ingredients, id: \.self) { ing in
+                    Text("• \(ing)")
+                        .font(.body)
                 }
 
+                // PASSOS
                 Text("Steps")
                     .font(.title2.bold())
+
                 VStack(alignment: .leading, spacing: 12) {
                     ForEach(Array(recipe.steps.enumerated()), id: \.offset) { idx, step in
                         HStack(alignment: .top) {
@@ -55,17 +58,24 @@ struct RecipeDetailView: View {
                     }
                 }
 
+                // TIMER
                 Group {
                     Text("Cooking Timer")
                         .font(.title2.bold())
+
                     HStack(spacing: 12) {
                         Button("Start \(recipe.prepTimeMinutes) min") {
                             vm.startTimer(minutes: recipe.prepTimeMinutes)
                         }
                         .buttonStyle(.borderedProminent)
-                        Button("Stop") { vm.stopTimer() }
-                            .buttonStyle(.bordered)
+
+                        Button("Stop") {
+                            vm.stopTimer()
+                        }
+                        .buttonStyle(.bordered)
+
                         Spacer()
+
                         Text(formatTime(vm.remainingSeconds))
                             .monospacedDigit()
                             .font(.title3.bold())
@@ -74,7 +84,7 @@ struct RecipeDetailView: View {
             }
             .padding()
         }
-        .navigationTitle(recipe.title)
+        .navigationTitle(recipe.name)       // <-- CORRIGIDO
         .navigationBarTitleDisplayMode(.inline)
     }
 
