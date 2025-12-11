@@ -3,94 +3,79 @@ import SwiftUI
 struct RecipeDetailView: View {
     let recipe: Recipe
     @EnvironmentObject var favorites: FavoritesStore
-    @StateObject private var vm = RecipeDetailViewModel()
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .leading, spacing: 20) {
 
-                // IMAGEM PRINCIPAL
-                Image(recipe.imageName)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(height: 200)
-                    .clipShape(RoundedRectangle(cornerRadius: 16))
-                    .overlay(alignment: .topTrailing) {
-                        Button {
-                            favorites.toggle(recipe)
-                        } label: {
-                            Image(systemName: favorites.isFavorite(recipe) ? "heart.fill" : "heart")
-                                .foregroundColor(.red)
-                                .padding(8)
-                                .background(.thinMaterial)
-                                .clipShape(Circle())
-                                .padding()
-                        }
+                // NOME DA RECEITA
+                Text(recipe.name)
+                    .font(.largeTitle.bold())
+                    .foregroundColor(Color("GreenDark"))
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal)
+
+                // IMAGEM + FAVORITO
+                ZStack(alignment: .topTrailing) {
+                    Image(recipe.imageName)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(height: 260)
+                        .clipShape(RoundedRectangle(cornerRadius: 16))
+                        .padding(.horizontal)
+
+                    Button {
+                        favorites.toggle(recipe)
+                    } label: {
+                        Image(systemName: favorites.isFavorite(recipe) ? "heart.fill" : "heart")
+                            .foregroundColor(.white)
+                            .padding(10)
+                            .background(Color.black.opacity(0.5))
+                            .clipShape(Circle())
+                            .padding(.trailing, 26)
+                            .padding(.top, 12)
                     }
+                }
 
                 // TEMPO + KCAL
-                HStack(spacing: 16) {
+                HStack(spacing: 20) {
                     Label("\(recipe.prepTimeMinutes) min", systemImage: "clock")
                     Label("\(recipe.calories) kcal", systemImage: "flame")
                 }
                 .font(.subheadline)
-                .foregroundStyle(.secondary)
+                .foregroundColor(.secondary)
+                .padding(.horizontal)
 
                 // INGREDIENTES
-                Text("Ingredients")
-                    .font(.title2.bold())
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Ingredients")
+                        .font(.title2.bold())
 
-                ForEach(recipe.ingredients, id: \.self) { ing in
-                    Text("• \(ing)")
-                        .font(.body)
+                    ForEach(recipe.ingredients, id: \.self) { ing in
+                        Text("• \(ing)")
+                    }
                 }
+                .padding(.horizontal)
 
-                // PASSOS
-                Text("Steps")
-                    .font(.title2.bold())
+                // STEPS
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Steps")
+                        .font(.title2.bold())
 
-                VStack(alignment: .leading, spacing: 12) {
-                    ForEach(Array(recipe.steps.enumerated()), id: \.offset) { idx, step in
+                    ForEach(Array(recipe.steps.enumerated()), id: \.offset) { index, step in
                         HStack(alignment: .top) {
-                            Text("\(idx + 1).").bold()
+                            Text("\(index + 1).")
+                                .bold()
                             Text(step)
                         }
                     }
                 }
+                .padding(.horizontal)
 
-                // TIMER
-                Group {
-                    Text("Cooking Timer")
-                        .font(.title2.bold())
-
-                    HStack(spacing: 12) {
-                        Button("Start \(recipe.prepTimeMinutes) min") {
-                            vm.startTimer(minutes: recipe.prepTimeMinutes)
-                        }
-                        .buttonStyle(.borderedProminent)
-
-                        Button("Stop") {
-                            vm.stopTimer()
-                        }
-                        .buttonStyle(.bordered)
-
-                        Spacer()
-
-                        Text(formatTime(vm.remainingSeconds))
-                            .monospacedDigit()
-                            .font(.title3.bold())
-                    }
-                }
+                Spacer(minLength: 32)
             }
-            .padding()
         }
-        .navigationTitle(recipe.name)       // <-- CORRIGIDO
+        .background(Color("BackgroundBeige").ignoresSafeArea())
         .navigationBarTitleDisplayMode(.inline)
-    }
-
-    private func formatTime(_ sec: Int) -> String {
-        let m = sec / 60
-        let s = sec % 60
-        return String(format: "%02d:%02d", m, s)
     }
 }
