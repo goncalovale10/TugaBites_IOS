@@ -2,72 +2,107 @@ import SwiftUI
 
 struct RecipeListView: View {
     @EnvironmentObject var repo: LocalRecipeRepository
-    @EnvironmentObject var favorites: FavoritesStore
     @StateObject private var vm: RecipeListViewModel
+    
+    private let backgroundBeige = Color(red: 0.96, green: 0.94, blue: 0.90)
 
     init() {
-        // Criamos o StateObject com um viewModel VAZIO/placeholder
         _vm = StateObject(wrappedValue: RecipeListViewModel(repo: LocalRecipeRepository()))
     }
 
     var body: some View {
-        VStack {
-            searchAndFilter
+        ScrollView(showsIndicators: false) {
+            VStack(spacing: 24) {
 
-            List(vm.filtered) { recipe in
-                NavigationLink(value: recipe) {
-                    RecipeRow(recipe: recipe)
+                // SEARCH + FILTER
+                searchAndFilter
+
+                // RECIPES
+                LazyVStack(spacing: 18) {
+                    ForEach(vm.filtered) { recipe in
+                        NavigationLink(value: recipe) {
+                            HomeRecipeCard(recipe: recipe)
+                        }
+                        .buttonStyle(.plain)
+                    }
                 }
+                .padding(.horizontal)
             }
-            .listStyle(.plain)
+            .padding(.top, 12)
         }
+        .background(backgroundBeige.ignoresSafeArea())
         .navigationTitle("Recipes")
+        .navigationBarTitleDisplayMode(.inline)
         .onAppear {
-            // Atualiza o viewModel para usar o repo REAL da app
             vm.setRepository(repo)
         }
     }
 
-    // MARK: - Search + Filter UI
+    // MARK: - SEARCH + FILTER
 
     private var searchAndFilter: some View {
-        VStack {
-            TextField("Search recipes or ingredients", text: $vm.searchText)
-                .textFieldStyle(.roundedBorder)
-                .padding(.horizontal)
+        VStack(spacing: 14) {
 
+            // SEARCH
+            HStack {
+                Image(systemName: "magnifyingglass")
+                    .foregroundColor(.secondary)
+
+                TextField("Search recipes or ingredients", text: $vm.searchText)
+            }
+            .padding(12)
+            .background(Color.white)
+            .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .shadow(color: .black.opacity(0.05), radius: 6, x: 0, y: 3)
+            .padding(.horizontal)
+
+            // CHIPS
             ScrollView(.horizontal, showsIndicators: false) {
-                HStack {
-                    Button {
+                HStack(spacing: 10) {
+
+                    Chip(
+                        text: "All",
+                        selected: vm.selectedCategory == nil
+                    ) {
                         vm.selectedCategory = nil
-                    } label: {
-                        Chip(text: "All", selected: vm.selectedCategory == nil)
                     }
 
                     ForEach(Category.allCases) { cat in
-                        Button {
+                        Chip(
+                            text: cat.rawValue,
+                            selected: vm.selectedCategory == cat
+                        ) {
                             vm.selectedCategory = cat
-                        } label: {
-                            Chip(text: cat.rawValue, selected: vm.selectedCategory == cat)
                         }
                     }
                 }
                 .padding(.horizontal)
             }
         }
-        .padding(.vertical, 4)
     }
 }
+
+// MARK: - CHIP
 
 private struct Chip: View {
     let text: String
     let selected: Bool
+    let action: () -> Void
 
     var body: some View {
-        Text(text)
-            .padding(.horizontal, 12)
-            .padding(.vertical, 6)
-            .background(selected ? Color.accentColor.opacity(0.25) : Color.secondary.opacity(0.1))
-            .clipShape(Capsule())
+        Button(action: action) {
+            Text(text)
+                .font(.system(size: 14, weight: .medium))
+                .foregroundColor(selected ? .white : .primary)
+                .padding(.horizontal, 14)
+                .padding(.vertical, 8)
+                .background(
+                    selected
+                    ? Color("GreenDark")
+                    : Color.secondary.opacity(0.15)
+                )
+                .clipShape(Capsule())
+        }
+        .buttonStyle(.plain)
     }
 }

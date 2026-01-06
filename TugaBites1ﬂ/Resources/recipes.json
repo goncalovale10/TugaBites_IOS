@@ -1,335 +1,632 @@
 [
-
   {
     "id": 1,
-    "name": "Arroz de Marisco",
-    "imageName": "arroz-de-marisco",
-    "category": "Fish",
-    "prepTimeMinutes": 60,
-    "calories": 600,
+    "name": "Pataniscas de Bacalhau",
+    "imageName": "pataniscas",
+    "category": "Appetizer",
+    "prepTimeMinutes": 40,
+    "calories": 320,
     "ingredients": [
-      "500 g mixed seafood",
-      "400 g rice",
-      "1 onion",
-      "2 garlic cloves",
-      "1 tomato",
-      "1 red pepper"
+      "300 g salted cod, soaked and shredded",
+      "1 small onion, finely chopped",
+      "2 eggs",
+      "140 g all-purpose flour",
+      "150 to 180 ml cold water or milk",
+      "2 tbsp chopped fresh parsley",
+      "Salt and black pepper, to taste",
+      "Vegetable oil for frying"
     ],
     "steps": [
-      "Prepare the base.",
-      "Add wine and stock.",
-      "Add rice.",
-      "Add seafood."
+      "Soak the salted cod for several hours or overnight, changing the water a few times. Drain well and shred into small pieces.",
+      "In a large bowl, mix the flour with the chopped onion and parsley.",
+      "Add the eggs and gradually pour in the water or milk, stirring until a smooth and thick batter forms. Adjust the consistency so it is thick enough to hold its shape when fried.",
+      "Fold in the shredded cod and season with salt and black pepper (be careful with the salt, as the cod may already be salty).",
+      "Heat a generous amount of oil in a frying pan over medium heat.",
+      "Drop spoonfuls of batter into the hot oil and fry for 2–3 minutes on each side, until golden and crispy.",
+      "Drain the fritters on paper towels and serve warm as an appetizer or snack."
     ]
   },
-
   {
     "id": 2,
-    "name": "Bacalhau à Brás",
-    "imageName": "bacalhau-a-bras",
-    "category": "Fish",
-    "prepTimeMinutes": 40,
-    "calories": 480,
+    "name": "Moelas Estufadas",
+    "imageName": "moelas",
+    "category": "Appetizer",
+    "prepTimeMinutes": 75,
+    "calories": 350,
     "ingredients": [
-      "400 g salted cod",
-      "500 g potatoes",
-      "1 onion",
-      "2 garlic cloves",
-      "4 eggs"
+      "800 g chicken gizzards, cleaned",
+      "1 medium onion, finely chopped",
+      "3 garlic cloves, minced",
+      "2 tbsp olive oil",
+      "100 ml white wine",
+      "2 tbsp tomato paste",
+      "1 bay leaf",
+      "200 ml water or chicken stock",
+      "Salt and black pepper, to taste",
+      "Fresh parsley, chopped, for serving"
     ],
     "steps": [
-      "Shred cod.",
-      "Fry potatoes.",
-      "Sauté onion and garlic.",
-      "Add cod and eggs."
+      "Clean the chicken gizzards, removing any excess fat or membranes, and rinse well under cold water.",
+      "Heat the olive oil in a pot over medium heat and sauté the chopped onion until soft and translucent.",
+      "Add the minced garlic and cook for 1–2 minutes, stirring to avoid burning.",
+      "Add the gizzards to the pot and cook for a few minutes, stirring occasionally, until they start to brown lightly.",
+      "Stir in the tomato paste, white wine, bay leaf and water or stock. Season with salt and black pepper.",
+      "Bring to a boil, then reduce the heat to low, cover the pot and let the gizzards stew gently for about 45–60 minutes, or until very tender. Stir occasionally and add a little more water if needed.",
+      "Adjust the seasoning, remove the bay leaf and sprinkle with chopped fresh parsley before serving, ideally with bread or rice."
     ]
   },
-
   {
     "id": 3,
-    "name": "Bacalhau à Gomes de Sá",
-    "imageName": "Bacalhau-a-Gomes-de-Sa",
-    "category": "Fish",
+    "name": "Salada de Polvo",
+    "imageName": "salada-polvo",
+    "category": "Appetizer",
     "prepTimeMinutes": 60,
-    "calories": 500,
+    "calories": 250,
     "ingredients": [
-      "600 g cod",
-      "800 g potatoes",
-      "2 onions",
-      "3 eggs",
-      "Olive oil"
+      "1 kg octopus, cleaned",
+      "1 small onion, finely chopped",
+      "2 garlic cloves, minced",
+      "4 tbsp olive oil",
+      "2 tbsp white wine vinegar or lemon juice",
+      "2 tbsp chopped fresh parsley",
+      "Salt and black pepper, to taste"
     ],
     "steps": [
-      "Cook cod.",
-      "Boil potatoes.",
-      "Layer potatoes, cod, and onions.",
-      "Bake 20–25 minutes."
+      "Place the cleaned octopus in a pot, cover with water and bring to a boil. Reduce the heat and cook gently for 35–45 minutes, or until the octopus is tender.",
+      "Allow the octopus to cool in the cooking liquid, then drain and cut it into small bite-sized pieces.",
+      "In a bowl, combine the chopped onion, minced garlic and parsley.",
+      "Add the octopus pieces to the bowl, then drizzle with olive oil and vinegar or lemon juice.",
+      "Season with salt and black pepper and mix well to coat all the pieces.",
+      "Refrigerate for at least 30 minutes before serving so the flavours can develop. Serve chilled or at room temperature."
     ]
   },
-
   {
     "id": 4,
-    "name": "Bacalhau com Natas",
-    "imageName": "bacalhau com natas",
-    "category": "Fish",
-    "prepTimeMinutes": 60,
-    "calories": 650,
+    "name": "Pimentos Padrón",
+    "imageName": "pimentos-padron",
+    "category": "Snack",
+    "prepTimeMinutes": 10,
+    "calories": 120,
     "ingredients": [
-      "400 g cod",
-      "600 g potatoes",
-      "1 onion",
-      "40 g butter",
-      "40 g flour",
-      "Milk and cream"
+      "300 g padrón peppers, whole",
+      "3 tbsp olive oil",
+      "Coarse sea salt, to taste"
     ],
     "steps": [
-      "Fry potatoes.",
-      "Sauté onion with cod.",
-      "Make béchamel.",
-      "Mix everything and bake."
+      "Heat the olive oil in a wide frying pan over medium-high heat.",
+      "Add the whole padrón peppers in a single layer and cook, stirring or shaking the pan frequently, until the skins are blistered and slightly charred in spots, about 5–7 minutes.",
+      "Remove the peppers to a serving plate, sprinkle generously with coarse sea salt and serve immediately as a snack or side dish."
     ]
   },
-
   {
     "id": 5,
+    "name": "Tábua de Queijos e Enchidos",
+    "imageName": "tabua-queijos",
+    "category": "Snack",
+    "prepTimeMinutes": 5,
+    "calories": 450,
+    "ingredients": [
+      "Serra cheese or other cured Portuguese cheese, sliced",
+      "Flamengo cheese, sliced",
+      "Chouriço, thinly sliced",
+      "Salpicão or other cured sausage, sliced",
+      "Fresh crusty bread or toasted bread slices",
+      "Olives, nuts or fruit (optional, for serving)"
+    ],
+    "steps": [
+      "Slice the cheeses and cured meats into bite-sized pieces or thin slices.",
+      "Arrange the cheeses, chouriço, salpicão and bread attractively on a wooden board or large platter.",
+      "Add olives, nuts or fresh fruit if desired, and serve at room temperature as a sharing snack or starter."
+    ]
+  },
+  {
+    "id": 6,
     "name": "Caldo Verde",
-    "imageName": "caldo verde",
+    "imageName": "caldo-verde",
     "category": "Soup",
     "prepTimeMinutes": 40,
     "calories": 180,
     "ingredients": [
-      "300 g potatoes",
-      "1 onion",
-      "2 garlic cloves",
-      "150 g kale",
-      "100 g chouriço",
-      "1.2 L water"
+      "300 g potatoes, peeled and diced",
+      "1 medium onion, chopped",
+      "2 garlic cloves, minced",
+      "150 g kale (Portuguese cabbage), very thinly sliced",
+      "100 g chouriço, sliced",
+      "1.2 L water or light stock",
+      "3 tbsp olive oil",
+      "Salt and black pepper, to taste"
     ],
     "steps": [
-      "Cook potatoes, onion, and garlic.",
-      "Blend.",
-      "Add kale and chouriço.",
-      "Finish with olive oil."
+      "In a large pot, combine the diced potatoes, chopped onion, minced garlic and water or stock. Season lightly with salt.",
+      "Bring to a boil, then reduce the heat and cook until the potatoes are very soft, about 15–20 minutes.",
+      "Remove the pot from the heat and blend the soup with a hand blender until smooth and creamy.",
+      "Return the pot to low heat and add the thinly sliced kale and chouriço.",
+      "Simmer gently for 10–15 minutes, until the kale is tender and the flavours are well combined.",
+      "Stir in the olive oil, adjust seasoning with salt and black pepper, and serve hot."
     ]
   },
-
   {
-    "id": 6,
-    "name": "Carne de Porco à Alentejana",
-    "imageName": "carne-de-porco-a-alentejana",
-    "category": "Meat",
-    "prepTimeMinutes": 60,
-    "calories": 650,
-    "ingredients": [
-      "800 g pork meat",
-      "500 g clams",
-      "4 garlic cloves",
-      "1 bay leaf",
-      "1 tbsp paprika",
-      "150 ml white wine"
-    ],
-    "steps": [
-      "Marinate pork.",
-      "Fry potatoes.",
-      "Brown pork.",
-      "Add clams and mix everything."
-    ]
-  },
-
-  {
-    "id": 7,
-    "name": "Feijoada à Transmontana",
-    "imageName": "feijoada-a-transmontana",
-    "category": "Meat",
-    "prepTimeMinutes": 120,
-    "calories": 750,
-    "ingredients": [
-      "400 g beans",
-      "400 g pork",
-      "200 g smoked sausage",
-      "100 g blood sausage",
-      "150 g bacon"
-    ],
-    "steps": [
-      "Cook beans.",
-      "Brown meats.",
-      "Add vegetables and beans.",
-      "Simmer 40–50 minutes."
-    ]
-  },
-
-  {
-    "id": 8,
-    "name": "Francesinha",
-    "imageName": "francesinha",
-    "category": "Meat",
-    "prepTimeMinutes": 60,
-    "calories": 900,
-    "ingredients": [
-      "Bread",
-      "Steak",
-      "Sausages",
-      "Cheese",
-      "Egg",
-      "Beer-tomato sauce"
-    ],
-    "steps": [
-      "Cook meats.",
-      "Prepare sauce.",
-      "Assemble sandwich.",
-      "Melt cheese and serve with sauce."
-    ]
-  },
-
-  {
-    "id": 9,
-    "name": "Leitão à Bairrada",
-    "imageName": "leitao-bairrada",
-    "category": "Meat",
-    "prepTimeMinutes": 150,
-    "calories": 850,
-    "ingredients": [
-      "1 suckling pig",
-      "Garlic",
-      "Paprika",
-      "Salt and pepper",
-      "White wine"
-    ],
-    "steps": [
-      "Season pig.",
-      "Marinate.",
-      "Roast at 200°C.",
-      "Crisp at 220°C."
-    ]
-  },
-  
-  {
-    "id": 10,
-    "name": "Massada de Peixe",
-    "imageName": "massada-de-peixe",
-    "category": "Fish",
-    "prepTimeMinutes": 45,
-    "calories": 550,
-    "ingredients": [
-      "500 g fish",
-      "250 g pasta",
-      "1 onion",
-      "2 garlic cloves",
-      "Tomato",
-      "Fish stock"
-    ],
-    "steps": [
-      "Sauté onion and garlic.",
-      "Add tomato and stock.",
-      "Cook pasta.",
-      "Add fish and finish cooking."
-    ]
-  },
-
-  {
-    "id": 11,
+    "id": 23,
     "name": "Papas de Sarrabulho",
     "imageName": "papas",
     "category": "Soup",
     "prepTimeMinutes": 90,
     "calories": 650,
     "ingredients": [
-      "500 g pork meat",
-      "100 g pork blood",
+      "500 g pork meat (such as shoulder or ribs)",
+      "100 g fresh pork blood",
       "200 g cornmeal",
+      "1 cinnamon stick",
       "1 bay leaf",
-      "Cinnamon stick"
+      "1.5 L meat broth or cooking liquid from the pork",
+      "Salt and black pepper, to taste"
     ],
     "steps": [
-      "Cook meat.",
-      "Add cornmeal.",
-      "Add pork blood.",
-      "Simmer until thick."
+      "Cook the pork meat in water seasoned with salt, the bay leaf and the cinnamon stick until tender. Remove the meat, shred it and reserve the cooking broth.",
+      "Bring the reserved broth back to a gentle boil, removing the cinnamon stick and bay leaf.",
+      "Gradually add the cornmeal to the broth, stirring constantly to avoid lumps.",
+      "Cook over low heat, stirring frequently, until the mixture thickens and the cornmeal is well cooked.",
+      "Stir in the fresh pork blood slowly, mixing well so it is fully incorporated.",
+      "Add the shredded pork meat back into the pot and continue cooking over low heat, stirring, until the papas reach a thick, creamy consistency.",
+      "Adjust seasoning with salt and black pepper and serve hot."
     ]
   },
-
   {
-    "id": 12,
-    "name": "Pastéis de Bacalhau",
-    "imageName": "Pasteis-de-bacalhau",
-    "category": "Appetizer",
-    "prepTimeMinutes": 40,
-    "calories": 300,
+    "id": 7,
+    "name": "Carne de Porco à Alentejana",
+    "imageName": "carne-de-porco-a-alentejana-1",
+    "category": "Meat",
+    "prepTimeMinutes": 60,
+    "calories": 650,
     "ingredients": [
-      "250 g salted cod",
-      "1 onion",
-      "2 eggs",
-      "120 g flour",
-      "Parsley"
+      "800 g pork shoulder or loin, cut into cubes",
+      "500 g clams, rinsed",
+      "4 garlic cloves, minced",
+      "1 bay leaf",
+      "1 tbsp paprika",
+      "150 ml white wine",
+      "2 tbsp olive oil",
+      "4 medium potatoes, cut into cubes",
+      "Vegetable oil for frying the potatoes",
+      "Salt and black pepper, to taste",
+      "Fresh coriander or parsley, chopped, for serving"
     ],
     "steps": [
-      "Mix cod, onion and parsley.",
-      "Add eggs and flour.",
-      "Fry spoonfuls in hot oil."
+      "In a bowl, season the pork cubes with minced garlic, paprika, bay leaf, white wine, salt and black pepper. Mix well, cover and marinate in the fridge for at least 1 hour.",
+      "Meanwhile, fry the potato cubes in hot vegetable oil until golden and crispy. Drain on paper towels and set aside.",
+      "Heat the olive oil in a large pan over medium-high heat. Remove the pork from the marinade (reserve the liquid) and brown the meat on all sides.",
+      "Pour the reserved marinade into the pan and cook for a few minutes until the alcohol evaporates and the sauce reduces slightly.",
+      "Add the clams to the pan, cover and cook until the clams open, discarding any that remain closed.",
+      "Gently fold the fried potatoes into the pork and clam mixture.",
+      "Sprinkle with chopped fresh coriander or parsley and serve immediately."
     ]
   },
-
   {
-    "id": 13,
-    "name": "Polvo à Lagareiro",
-    "imageName": "polvo-a-lagareiro",
-    "category": "Fish",
-    "prepTimeMinutes": 90,
-    "calories": 550,
-    "ingredients": [
-      "1 kg octopus",
-      "800 g potatoes",
-      "4 garlic cloves",
-      "Olive oil"
-    ],
-    "steps": [
-      "Boil octopus.",
-      "Roast potatoes.",
-      "Bake with garlic oil."
-    ]
-  },
-
-  {
-    "id": 14,
+    "id": 8,
     "name": "Rojões à Moda do Minho",
     "imageName": "rojoes",
     "category": "Meat",
     "prepTimeMinutes": 75,
     "calories": 700,
     "ingredients": [
-      "800 g pork",
-      "Garlic",
-      "White wine",
-      "Bay leaf",
-      "Paprika"
+      "800 g pork (shoulder or belly), cut into cubes",
+      "4 garlic cloves, minced",
+      "150 ml white wine",
+      "1 tbsp vinegar",
+      "2 bay leaves",
+      "1 tbsp paprika",
+      "600 g potatoes, cut into cubes",
+      "Lard or oil for frying",
+      "Salt and black pepper, to taste"
     ],
     "steps": [
-      "Marinate pork.",
-      "Fry potatoes.",
-      "Cook pork.",
-      "Mix and serve."
+      "In a bowl, season the pork cubes with minced garlic, paprika, bay leaves, white wine, vinegar, salt and black pepper. Mix well and marinate in the fridge for at least 1 hour.",
+      "Heat lard or oil in a pan and fry the potato cubes until golden and crispy. Drain and set aside.",
+      "In the same or a clean pan, fry the marinated pork over medium-high heat, stirring occasionally, until browned and cooked through. Allow the sauce to reduce slightly.",
+      "Taste and adjust seasoning if necessary.",
+      "Add the fried potatoes to the pan with the pork and toss gently so they absorb some of the sauce.",
+      "Serve hot, optionally with pickles or sautéed greens."
     ]
   },
-
   {
-    "id": 15,
+    "id": 9,
+    "name": "Feijoada à Transmontana",
+    "imageName": "feijoada-a-transmontana",
+    "category": "Meat",
+    "prepTimeMinutes": 120,
+    "calories": 750,
+    "ingredients": [
+      "400 g dried beans (or 800 g cooked beans), soaked if dried",
+      "400 g pork (ribs or shoulder), cut into pieces",
+      "200 g smoked sausage (chouriço), sliced",
+      "100 g blood sausage (morcela), sliced",
+      "150 g bacon, cut into pieces",
+      "1 onion, chopped",
+      "2 garlic cloves, minced",
+      "2 tbsp tomato paste",
+      "2 tbsp olive oil",
+      "Bay leaf (optional)",
+      "Salt and black pepper, to taste"
+    ],
+    "steps": [
+      "If using dried beans, soak them overnight and cook in unsalted water until tender. Drain and set aside.",
+      "In a large pot, heat the olive oil over medium heat and sauté the chopped onion until soft, then add the minced garlic and cook for 1–2 minutes.",
+      "Add the bacon and pork pieces and brown them lightly on all sides.",
+      "Stir in the tomato paste and, if desired, a bay leaf. Mix well.",
+      "Add the sliced chouriço and blood sausage, then pour in enough water to cover all the ingredients. Season with salt and black pepper.",
+      "Simmer gently for about 30 minutes, then add the cooked beans.",
+      "Continue cooking for another 30–40 minutes, until the flavours are well combined and the sauce has thickened slightly. Adjust seasoning before serving."
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Leitão à Bairrada",
+    "imageName": "leitao-bairrada",
+    "category": "Meat",
+    "prepTimeMinutes": 150,
+    "calories": 850,
+    "ingredients": [
+      "1 suckling pig, cleaned",
+      "6 to 8 garlic cloves, crushed",
+      "Salt and black pepper, to taste",
+      "1 to 2 tbsp paprika",
+      "3 to 4 tbsp lard or olive oil",
+      "100 ml white wine"
+    ],
+    "steps": [
+      "Preheat the oven to 200°C.",
+      "Prepare a paste by mixing the crushed garlic, salt, black pepper, paprika, lard or olive oil and white wine.",
+      "Rub this seasoning paste all over the inside and outside of the suckling pig, ensuring it is well coated. Let it marinate for at least 1–2 hours in the fridge.",
+      "Place the pig on a rack in a roasting tray, skin side up.",
+      "Roast at 200°C for about 1 hour, basting occasionally with the juices from the tray.",
+      "Increase the oven temperature to around 220°C and continue roasting until the skin is very crispy and golden and the meat is cooked through.",
+      "Let it rest for a few minutes before carving and serving."
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Francesinha",
+    "imageName": "francesinha",
+    "category": "Meat",
+    "prepTimeMinutes": 60,
+    "calories": 900,
+    "ingredients": [
+      "4 slices of loaf bread",
+      "2 thin steak pieces",
+      "2 sausages (linguiça or similar), sliced",
+      "2 frankfurters, cut in half",
+      "4 slices of cheese",
+      "1 egg",
+      "Sauce: beer, tomato pulp, stock, piri-piri, bay leaf and seasoning"
+    ],
+    "steps": [
+      "Grill or pan-fry the steak pieces and sausages until cooked. Cook the frankfurters briefly in boiling water or on a griddle.",
+      "Prepare the Francesinha sauce by simmering beer, tomato pulp, stock, piri-piri, bay leaf and seasoning until slightly thickened. Adjust salt and spice to taste and keep warm.",
+      "Lightly toast the bread slices. Assemble the sandwich by layering bread, steak, sausages and frankfurters, and covering with the second slice of bread.",
+      "Cover the sandwich completely with cheese slices.",
+      "Place the sandwich in a hot oven or under a grill until the cheese melts and starts to bubble.",
+      "Meanwhile, fry the egg and place it on top of the melted cheese.",
+      "Serve the sandwich on a deep plate and pour the hot Francesinha sauce generously over it, ideally accompanied by chips."
+    ]
+  },
+  {
+    "id": 24,
     "name": "Tripas à Moda do Porto",
     "imageName": "tripas-a-moda-do-porto",
     "category": "Meat",
     "prepTimeMinutes": 120,
     "calories": 850,
     "ingredients": [
-      "1 kg tripe",
-      "200 g smoked meats",
-      "2 carrots",
-      "1 onion",
-      "2 garlic cloves"
+      "1 kg tripe, well cleaned",
+      "300 g white beans (or 600 g cooked beans)",
+      "200 g assorted smoked meats (chouriço, bacon, etc.), sliced",
+      "2 carrots, sliced",
+      "1 onion, chopped",
+      "2 garlic cloves, minced",
+      "2 to 3 tbsp tomato paste",
+      "3 tbsp olive oil",
+      "Bay leaf (optional)",
+      "Salt and black pepper, to taste"
     ],
     "steps": [
-      "Cook tripe.",
-      "Sauté aromatics.",
-      "Add meats and carrots.",
-      "Simmer with beans."
+      "If using dried beans, soak them overnight and cook them in unsalted water until tender. Drain and set aside.",
+      "Clean the tripe thoroughly and cook it in salted water until tender. Drain and cut into pieces.",
+      "In a large pot, heat the olive oil and sauté the chopped onion until soft. Add the minced garlic and cook for 1–2 minutes.",
+      "Stir in the tomato paste and, if using, a bay leaf, cooking for a couple of minutes.",
+      "Add the sliced smoked meats and carrots, stirring to combine.",
+      "Add the cooked tripe pieces and enough water to cover. Simmer gently for about 30 minutes.",
+      "Add the cooked beans and continue to simmer for another 20–30 minutes, until all the flavours have blended and the sauce has thickened slightly.",
+      "Adjust seasoning with salt and black pepper and serve hot."
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Bacalhau à Brás",
+    "imageName": "bacalhau-a-bras",
+    "category": "Fish",
+    "prepTimeMinutes": 40,
+    "calories": 480,
+    "ingredients": [
+      "400 g salted cod, soaked and shredded",
+      "500 g potatoes, cut into thin matchsticks",
+      "1 large onion, thinly sliced",
+      "2 garlic cloves, minced",
+      "4 eggs",
+      "3 tbsp olive oil",
+      "Vegetable oil for frying the potatoes",
+      "Salt and black pepper, to taste",
+      "Chopped fresh parsley and black olives, for serving"
+    ],
+    "steps": [
+      "Soak the salted cod for several hours or overnight, changing the water a few times. Drain well and shred into small pieces.",
+      "Fry the matchstick potatoes in hot vegetable oil until golden and crispy. Drain on paper towels and set aside.",
+      "In a large pan, heat the olive oil over medium heat and sauté the sliced onion until soft and lightly golden. Add the minced garlic and cook for 1–2 minutes.",
+      "Add the shredded cod to the pan and cook, stirring, for a few minutes until heated through.",
+      "In a bowl, lightly beat the eggs with a pinch of salt and pepper.",
+      "Lower the heat and add the fried potatoes to the pan, mixing gently with the cod and onion.",
+      "Pour the beaten eggs over the mixture and stir gently until the eggs are just set but still creamy.",
+      "Serve immediately, topped with chopped parsley and black olives."
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Bacalhau à Gomes de Sá",
+    "imageName": "bacalhau-a-gomes-de-sa",
+    "category": "Fish",
+    "prepTimeMinutes": 60,
+    "calories": 500,
+    "ingredients": [
+      "600 g salted cod, soaked",
+      "800 g potatoes, peeled and sliced",
+      "2 onions, thinly sliced",
+      "3 eggs",
+      "3 tbsp olive oil, plus extra for drizzling",
+      "2 garlic cloves, minced (optional)",
+      "Black olives and chopped parsley, for serving",
+      "Salt and black pepper, to taste"
+    ],
+    "steps": [
+      "Soak the salted cod for several hours or overnight, changing the water a few times. Drain and cook the cod in simmering water for 5–7 minutes, then remove, drain and flake into large pieces, discarding any skin and bones.",
+      "Boil the sliced potatoes in salted water until just tender but not falling apart. Drain and set aside.",
+      "Boil the eggs, peel them and slice or quarter them.",
+      "In a frying pan, heat the olive oil and gently sauté the sliced onions (and minced garlic, if using) until soft and lightly golden.",
+      "In a lightly oiled baking dish, layer the potatoes, flaked cod and sautéed onions, seasoning lightly with salt and pepper between layers.",
+      "Drizzle with a little more olive oil and bake in a preheated oven at 180°C for about 20–25 minutes, until heated through and lightly browned on top.",
+      "Top with the sliced boiled eggs, black olives and chopped parsley before serving."
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Bacalhau com Natas",
+    "imageName": "bacalhau-com-natas",
+    "category": "Fish",
+    "prepTimeMinutes": 60,
+    "calories": 650,
+    "ingredients": [
+      "400 g salted cod, soaked and flaked",
+      "600 g potatoes, peeled and cut into small cubes",
+      "1 onion, thinly sliced",
+      "40 g butter",
+      "40 g flour",
+      "500 ml milk",
+      "100 ml cream",
+      "2 to 3 tbsp olive oil",
+      "Salt, black pepper and nutmeg, to taste"
+    ],
+    "steps": [
+      "Soak the salted cod for several hours or overnight, changing the water a few times. Drain, cook briefly in simmering water, then flake into pieces, removing skin and bones.",
+      "Fry the potato cubes in hot oil until golden but not too dark. Drain on paper towels and set aside.",
+      "In a pan, heat the olive oil and sauté the sliced onion until soft and translucent. Add the flaked cod and cook for a few minutes, stirring gently.",
+      "In a separate saucepan, melt the butter, add the flour and cook for 1–2 minutes, stirring constantly.",
+      "Gradually whisk in the milk to make a smooth béchamel sauce. Cook until slightly thickened, then add the cream and season with salt, pepper and a pinch of nutmeg.",
+      "In a large bowl or directly in a baking dish, mix the fried potatoes with the cod and onion mixture, then combine with most of the béchamel, reserving a little for the top.",
+      "Transfer to a baking dish, spread the remaining béchamel on top and bake at 180–190°C until bubbling and golden on the surface.",
+      "Let it rest for a few minutes before serving."
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Arroz de Marisco",
+    "imageName": "arroz-de-marisco",
+    "category": "Fish",
+    "prepTimeMinutes": 60,
+    "calories": 600,
+    "ingredients": [
+      "500 g mixed seafood (prawns, clams, mussels, squid, etc.)",
+      "400 g rice (short or medium grain)",
+      "1 onion, chopped",
+      "2 garlic cloves, minced",
+      "1 ripe tomato, chopped (or 2 tbsp tomato paste)",
+      "1 red pepper, chopped",
+      "3 tbsp olive oil",
+      "150 ml white wine",
+      "1.2 to 1.5 L fish or seafood stock",
+      "Fresh coriander or parsley, chopped",
+      "Salt and black pepper, to taste"
+    ],
+    "steps": [
+      "If needed, clean the seafood and set aside. Keep clams and mussels well rinsed.",
+      "Heat the olive oil in a large pot and sauté the chopped onion until soft. Add the minced garlic and cook for 1–2 minutes.",
+      "Stir in the chopped tomato (or tomato paste) and red pepper and cook for a few more minutes until softened.",
+      "Add the rice and stir to coat it in the mixture, toasting it lightly.",
+      "Pour in the white wine and let it reduce slightly.",
+      "Add most of the hot fish or seafood stock, season with salt and black pepper, and simmer over medium heat, stirring occasionally.",
+      "When the rice is about halfway cooked, add the seafood, starting with the ones that take longer to cook (such as squid), then prawns, clams and mussels.",
+      "Add more stock as needed to keep the rice moist and slightly soupy. Cook until the rice is tender and the seafood is cooked through.",
+      "Adjust seasoning, sprinkle with chopped fresh coriander or parsley and serve immediately."
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Polvo à Lagareiro",
+    "imageName": "polvo-a-lagareiro",
+    "category": "Fish",
+    "prepTimeMinutes": 90,
+    "calories": 550,
+    "ingredients": [
+      "1 kg octopus, cleaned",
+      "800 g small potatoes",
+      "4 garlic cloves, thinly sliced",
+      "120 ml olive oil (or more, to taste)",
+      "Salt and black pepper, to taste",
+      "Fresh parsley, chopped (optional)"
+    ],
+    "steps": [
+      "Place the cleaned octopus in a pot, cover with water and cook over low heat for 35–45 minutes, or until tender. Let it cool slightly, then cut into large pieces.",
+      "Meanwhile, wash the potatoes and boil them in salted water until just tender. Drain, then gently press each potato to slightly flatten it.",
+      "Preheat the oven to 200°C.",
+      "Place the octopus pieces and the lightly crushed potatoes in a baking dish.",
+      "In a small pan, gently heat the olive oil with the sliced garlic until fragrant, without letting the garlic burn.",
+      "Pour the garlic-infused olive oil over the octopus and potatoes. Season with salt and black pepper.",
+      "Roast in the oven for about 15–20 minutes, until the edges are golden and slightly crispy.",
+      "Sprinkle with chopped parsley, if desired, and serve hot."
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Massada de Peixe",
+    "imageName": "massada-de-peixe",
+    "category": "Fish",
+    "prepTimeMinutes": 45,
+    "calories": 550,
+    "ingredients": [
+      "500 g firm white fish (hake, monkfish, etc.), cut into chunks",
+      "250 g macaroni or similar pasta",
+      "1 onion, chopped",
+      "2 garlic cloves, minced",
+      "1 ripe tomato, chopped (or 2 tbsp tomato paste)",
+      "3 tbsp olive oil",
+      "800 to 900 ml fish stock or water",
+      "Fresh coriander, chopped",
+      "Salt and black pepper, to taste"
+    ],
+    "steps": [
+      "Heat the olive oil in a pot and sauté the chopped onion until soft. Add the minced garlic and cook for 1–2 minutes.",
+      "Stir in the chopped tomato or tomato paste and cook until the tomato breaks down and forms a sauce.",
+      "Add the fish stock or water, season with salt and black pepper and bring to a gentle boil.",
+      "Add the pasta and cook for a few minutes, stirring occasionally.",
+      "Add the fish pieces and continue cooking until the pasta is al dente and the fish is cooked through, keeping the dish slightly brothy.",
+      "Adjust seasoning, sprinkle with chopped fresh coriander and serve immediately."
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Arroz Doce",
+    "imageName": "arroz-doce",
+    "category": "Dessert",
+    "prepTimeMinutes": 50,
+    "calories": 280,
+    "ingredients": [
+      "200 g short-grain rice",
+      "1 L milk",
+      "150 g sugar",
+      "1 lemon peel (large strip)",
+      "1 cinnamon stick",
+      "2 egg yolks (optional, for richer texture)",
+      "Ground cinnamon, for topping",
+      "Pinch of salt"
+    ],
+    "steps": [
+      "Rinse the rice briefly under cold water.",
+      "In a pot, bring about 300 ml of water to a boil with a pinch of salt. Add the rice and cook over low heat until most of the water is absorbed.",
+      "Add the milk, lemon peel and cinnamon stick. Simmer gently, stirring often, until the rice is very soft and creamy.",
+      "Stir in the sugar and cook for a few more minutes until dissolved and well combined.",
+      "If using egg yolks, remove the pot from the heat. In a small bowl, beat the yolks with a little of the hot rice mixture, then slowly stir this back into the pot, mixing quickly to avoid curdling.",
+      "Remove the lemon peel and cinnamon stick. Adjust thickness with a little more milk if needed.",
+      "Pour the rice pudding into a serving dish or individual bowls, let it cool slightly and sprinkle with ground cinnamon before serving."
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Pastéis de Nata",
+    "imageName": "pasteis-nata",
+    "category": "Dessert",
+    "prepTimeMinutes": 60,
+    "calories": 290,
+    "ingredients": [
+      "Puff pastry sheet",
+      "500 ml milk",
+      "150 g sugar",
+      "40 g flour",
+      "4 egg yolks",
+      "1 cinnamon stick and lemon peel (optional)",
+      "Ground cinnamon, for serving"
+    ],
+    "steps": [
+      "Preheat the oven to 220–240°C and lightly grease a muffin or tartlet tin.",
+      "Roll out the puff pastry and cut discs to fit the moulds. Press the pastry into each mould to form small shells and chill while you prepare the custard.",
+      "In a saucepan, mix the flour with a little of the cold milk to form a smooth paste. Gradually add the remaining milk, stirring well.",
+      "Add the sugar, cinnamon stick and lemon peel (if using) and heat the mixture over medium heat, stirring constantly, until it thickens slightly and just comes to a simmer. Remove from the heat and discard the cinnamon and lemon.",
+      "Let the mixture cool for a few minutes, then whisk in the egg yolks until smooth.",
+      "Pour the custard into the prepared pastry shells, filling them almost to the top.",
+      "Bake in the hot oven for about 12–15 minutes, or until the pastry is crisp and the custard is set with dark spots on top.",
+      "Let the tarts cool slightly, then sprinkle with ground cinnamon before serving."
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Leite Creme",
+    "imageName": "leite-creme",
+    "category": "Dessert",
+    "prepTimeMinutes": 30,
+    "calories": 250,
+    "ingredients": [
+      "500 ml milk",
+      "100 to 120 g sugar (plus extra for caramelizing)",
+      "4 egg yolks",
+      "1 to 2 tbsp cornstarch",
+      "1 lemon peel (large strip)",
+      "1 cinnamon stick"
+    ],
+    "steps": [
+      "In a bowl, whisk together the egg yolks, sugar and cornstarch until smooth.",
+      "In a saucepan, heat the milk with the lemon peel and cinnamon stick until it just comes to a simmer. Remove the lemon peel and cinnamon.",
+      "Gradually pour the hot milk into the yolk mixture, whisking constantly.",
+      "Return the mixture to the saucepan and cook over low to medium heat, stirring continuously, until it thickens into a smooth custard.",
+      "Pour the custard into shallow dishes and let it cool completely in the fridge.",
+      "Just before serving, sprinkle an even layer of sugar on top and caramelize it with a kitchen torch (or under a very hot grill) until golden and crisp."
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Pão de Ló",
+    "imageName": "pao-lo",
+    "category": "Dessert",
+    "prepTimeMinutes": 45,
+    "calories": 220,
+    "ingredients": [
+      "6 eggs",
+      "150 g sugar",
+      "75 g flour",
+      "Pinch of salt"
+    ],
+    "steps": [
+      "Preheat the oven to 170–180°C and line a round cake tin with parchment paper.",
+      "Separate the eggs. Beat the egg whites with a pinch of salt until stiff peaks form.",
+      "In another bowl, beat the egg yolks with the sugar until the mixture is pale and thick.",
+      "Gently fold the beaten egg whites into the yolk mixture in batches.",
+      "Sift the flour over the batter and fold it in carefully, trying not to lose too much air.",
+      "Pour the batter into the prepared tin and bake for 25–30 minutes, or until the cake is risen and lightly golden (it can be slightly moist in the centre, depending on the style).",
+      "Allow to cool slightly before unmoulding and serving."
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Baba de Camelo",
+    "imageName": "baba-camelo",
+    "category": "Dessert",
+    "prepTimeMinutes": 20,
+    "calories": 300,
+    "ingredients": [
+      "1 can sweetened condensed milk (cooked to caramel)",
+      "4 eggs, separated"
+    ],
+    "steps": [
+      "If the condensed milk is not already caramelized, cook the unopened can in simmering water for about 2 hours, then let it cool completely before opening.",
+      "In a bowl, mix the caramelized condensed milk with the egg yolks until smooth.",
+      "In a separate bowl, beat the egg whites until stiff peaks form.",
+      "Gently fold the beaten egg whites into the caramel mixture until well combined and airy.",
+      "Divide into individual bowls and chill in the fridge for a few hours before serving."
     ]
   }
 ]

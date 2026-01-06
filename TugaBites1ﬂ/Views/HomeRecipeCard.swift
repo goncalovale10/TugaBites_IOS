@@ -2,107 +2,56 @@ import SwiftUI
 
 struct HomeRecipeCard: View {
     let recipe: Recipe
+    var compact: Bool = false
 
-    var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-
-            // IMAGEM
-            Image(recipe.imageName)
-                .resizable()
-                .scaledToFill()
-                .frame(height: 180)
-                .clipped()
-                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-
-            // CARD INFERIOR
-            VStack(alignment: .leading, spacing: 12) {
-
-                // TÍTULO
-                Text(recipe.name)
-                    .font(.system(size: 20, weight: .semibold))
-                    .foregroundColor(.black)
-
-                // TEMPO + KCAL
-                HStack(spacing: 20) {
-                    Label("\(recipe.prepTimeMinutes) min", systemImage: "clock")
-                    Label("\(recipe.calories) kcal", systemImage: "flame")
-                }
-                .font(.system(size: 14))
-                .foregroundColor(.gray)
-
-                // BOTÃO
-                HStack {
-                    Spacer()
-                    Text("View Recipe")
-                        .font(.system(size: 15, weight: .medium))
-                        .padding(.vertical, 8)
-                        .padding(.horizontal, 20)
-                        .background(Color("GreenDark"))
-                        .foregroundColor(.white)
-                        .clipShape(Capsule())
-                    Spacer()
-                }
-                .padding(.top, 4)
-
-            }
-            .padding(16)
-        }
-        .background(Color.white)
-        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-        .shadow(color: .black.opacity(0.08), radius: 8, x: 0, y: 4)
+    // MARK: - Layout constants
+    private var cardHeight: CGFloat {
+        compact ? 150 : 190
     }
-}
-import SwiftUI
 
-struct HomeRecipeCard: View {
-    let recipe: Recipe
+    private var cardWidth: CGFloat {
+        compact ? 260 : UIScreen.main.bounds.width - 32
+    }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
+        ZStack(alignment: .bottomLeading) {
 
-            // IMAGEM
+            // IMAGE (largura + altura fixas → espaçamento uniforme)
             Image(recipe.imageName)
                 .resizable()
                 .scaledToFill()
-                .frame(height: 180)
+                .frame(width: cardWidth, height: cardHeight)
                 .clipped()
-                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
 
-            // CARD INFERIOR
-            VStack(alignment: .leading, spacing: 12) {
+            // GRADIENT
+            LinearGradient(
+                colors: [
+                    .black.opacity(0.0),
+                    .black.opacity(0.65)
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+            )
 
-                // TÍTULO
-                Text(recipe.name)
-                    .font(.system(size: 20, weight: .semibold))
-                    .foregroundColor(.black)
+            // CONTENT
+            VStack(alignment: .leading, spacing: 8) {
+                Text(recipe.name) // 🇵🇹 mantém PT
+                    .font(.system(size: compact ? 18 : 22, weight: .bold))
+                    .foregroundColor(.white)
+                    .lineLimit(2)
 
-                // TEMPO + KCAL
-                HStack(spacing: 20) {
+                HStack(spacing: 14) {
                     Label("\(recipe.prepTimeMinutes) min", systemImage: "clock")
                     Label("\(recipe.calories) kcal", systemImage: "flame")
                 }
-                .font(.system(size: 14))
-                .foregroundColor(.gray)
-
-                // BOTÃO
-                HStack {
-                    Spacer()
-                    Text("View Recipe")
-                        .font(.system(size: 15, weight: .medium))
-                        .padding(.vertical, 8)
-                        .padding(.horizontal, 20)
-                        .background(Color("GreenDark"))
-                        .foregroundColor(.white)
-                        .clipShape(Capsule())
-                    Spacer()
-                }
-                .padding(.top, 4)
-
+                .font(.system(size: 13, weight: .medium))
+                .foregroundColor(.white.opacity(0.9))
             }
-            .padding(16)
+            .padding()
         }
-        .background(Color.white)
-        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-        .shadow(color: .black.opacity(0.08), radius: 8, x: 0, y: 4)
+        .frame(width: cardWidth, height: cardHeight)
+        .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
+        .shadow(color: .black.opacity(0.16), radius: 12, x: 0, y: 8)
+        .contentShape(Rectangle())
     }
 }
