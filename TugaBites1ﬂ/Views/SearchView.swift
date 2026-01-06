@@ -1,11 +1,17 @@
 import SwiftUI
 
 struct SearchView: View {
+
+    // Repositório principal com todas as receitas
     @EnvironmentObject var repo: LocalRecipeRepository
+
+    // Store de favoritos (usada nos resultados)
     @EnvironmentObject var favorites: FavoritesStore
+
+    // ViewModel responsável apenas pela lógica de pesquisa e filtros
     @StateObject private var vm = SearchViewModel()
 
-    // MARK: - COLORS
+    // MARK: - Colors
     private let greenDark = Color(red: 0.18, green: 0.30, blue: 0.25)
     private let backgroundBeige = Color(red: 0.96, green: 0.94, blue: 0.90)
 
@@ -13,7 +19,8 @@ struct SearchView: View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .leading, spacing: 22) {
 
-                // MARK: - SEARCH FIELDS
+                // MARK: - Search Fields
+                // Pesquisa por nome e por ingrediente (independentes)
                 VStack(spacing: 14) {
                     searchField(
                         placeholder: "Search by recipe name",
@@ -29,16 +36,18 @@ struct SearchView: View {
                 }
                 .padding(.horizontal)
 
-                // MARK: - CATEGORY FILTER
+                // MARK: - Category Filter
                 categorySection
 
-                // MARK: - RESULTS
+                // MARK: - Results
+                // Estados diferentes consoante exista ou não pesquisa ativa
                 if vm.filteredRecipes.isEmpty {
 
                     if vm.searchName.isEmpty &&
                         vm.searchIngredient.isEmpty &&
                         vm.selectedCategory == nil {
 
+                        // Estado inicial (sem filtros aplicados)
                         Text("Search recipes by name, ingredient or category")
                             .font(.system(size: 16, weight: .medium))
                             .foregroundColor(.secondary)
@@ -46,12 +55,17 @@ struct SearchView: View {
                             .padding(.top, 40)
 
                     } else {
+
+                        // Pesquisa ativa mas sem resultados
                         Text("No recipes found")
                             .foregroundColor(.secondary)
                             .frame(maxWidth: .infinity)
                             .padding(.top, 40)
                     }
+
                 } else {
+
+                    // Lista de resultados filtrados
                     LazyVStack(spacing: 16) {
                         ForEach(vm.filteredRecipes) { recipe in
                             NavigationLink(value: recipe) {
@@ -69,12 +83,15 @@ struct SearchView: View {
         }
         .background(backgroundBeige.ignoresSafeArea())
         .navigationTitle("Search")
+
+        // Injeta as receitas no ViewModel quando o ecrã aparece
         .onAppear {
             vm.setRecipes(repo.recipes)
         }
     }
 
-    // MARK: - SEARCH FIELD
+    // MARK: - Search Field Component
+    // Campo reutilizável para manter consistência visual
     private func searchField(
         placeholder: String,
         text: Binding<String>,
@@ -91,7 +108,7 @@ struct SearchView: View {
                     vm.applyFilters()
                 }
 
-
+            // Botão de limpar texto
             if !text.wrappedValue.isEmpty {
                 Button {
                     text.wrappedValue = ""
@@ -108,7 +125,8 @@ struct SearchView: View {
         .shadow(color: .black.opacity(0.05), radius: 6, y: 4)
     }
 
-    // MARK: - CATEGORY SECTION
+    // MARK: - Category Section
+    // Filtro horizontal por categoria
     private var categorySection: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text("Category")
@@ -119,7 +137,7 @@ struct SearchView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
 
-                    // ALL
+                    // Opção "All" remove o filtro de categoria
                     filterChip(
                         label: "All",
                         isSelected: vm.selectedCategory == nil
@@ -144,7 +162,8 @@ struct SearchView: View {
         }
     }
 
-    // MARK: - FILTER CHIP (INLINE)
+    // MARK: - Filter Chip
+    // Implementado inline para evitar criar uma View extra
     @ViewBuilder
     private func filterChip(
         label: String,
@@ -167,3 +186,4 @@ struct SearchView: View {
         .buttonStyle(.plain)
     }
 }
+

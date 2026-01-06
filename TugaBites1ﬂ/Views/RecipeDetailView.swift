@@ -1,16 +1,23 @@
 import SwiftUI
 
 struct RecipeDetailView: View {
+
+    // Receita a apresentar
     let recipe: Recipe
+
+    // Store responsável pelos favoritos
     @EnvironmentObject var favorites: FavoritesStore
+
+    // Tab atualmente selecionada
     @State private var selectedTab: Tab = .ingredients
 
+    // Tabs disponíveis no detalhe da receita
     enum Tab {
         case ingredients
         case preparation
     }
 
-    // MARK: - COLORS
+    // MARK: - Colors
     private let greenDark = Color(red: 0.18, green: 0.30, blue: 0.25)
     private let backgroundBeige = Color(red: 0.96, green: 0.94, blue: 0.90)
 
@@ -18,13 +25,17 @@ struct RecipeDetailView: View {
         ScrollView(showsIndicators: false) {
             VStack(spacing: 18) {
 
+                // Imagem principal da receita
                 heroImage
 
+                // Nome da receita + métricas
                 titleAndMetrics
 
+                // Alternador entre ingredientes e preparação
                 tabSwitcher
                     .padding(.horizontal)
 
+                // Conteúdo dependente da tab selecionada
                 if selectedTab == .ingredients {
                     ingredientsSection
                 } else {
@@ -39,20 +50,28 @@ struct RecipeDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
     }
 
-    // MARK: - HERO IMAGE (SEM BUGS)
+    // MARK: - Hero Image
+    // Usa GeometryReader para garantir proporção fixa (4:3) sem distorções
     private var heroImage: some View {
         GeometryReader { geo in
             let width = geo.size.width - 32
-            let height = width * 0.75 // 4:3
+            let height = width * 0.75
 
             ZStack(alignment: .topTrailing) {
+
                 Image(recipe.imageName)
                     .resizable()
                     .scaledToFill()
                     .frame(width: width, height: height)
                     .clipped()
-                    .clipShape(RoundedRectangle(cornerRadius: 28, style: .continuous))
+                    .clipShape(
+                        RoundedRectangle(
+                            cornerRadius: 28,
+                            style: .continuous
+                        )
+                    )
 
+                // Botão de favorito sobreposto à imagem
                 Button {
                     favorites.toggle(recipe)
                 } label: {
@@ -70,9 +89,10 @@ struct RecipeDetailView: View {
         .padding(.horizontal, 16)
     }
 
-    // MARK: - TITLE + METRICS
+    // MARK: - Title & Metrics
     private var titleAndMetrics: some View {
         VStack(spacing: 10) {
+
             Text(recipe.name)
                 .font(.system(size: 28, weight: .bold))
                 .foregroundColor(greenDark)
@@ -86,13 +106,14 @@ struct RecipeDetailView: View {
         }
     }
 
+    // Métrica reutilizável (tempo / calorias)
     private func metric(icon: String, value: String) -> some View {
         Label(value, systemImage: icon)
             .font(.subheadline.weight(.medium))
             .foregroundColor(.secondary)
     }
 
-    // MARK: - TAB SWITCHER
+    // MARK: - Tab Switcher
     private var tabSwitcher: some View {
         HStack(spacing: 4) {
             tabButton("Ingredients", .ingredients)
@@ -114,13 +135,15 @@ struct RecipeDetailView: View {
                 .foregroundColor(selectedTab == tab ? .white : .primary)
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 10)
-                .background(selectedTab == tab ? greenDark : Color.clear)
+                .background(
+                    selectedTab == tab ? greenDark : Color.clear
+                )
                 .clipShape(Capsule())
         }
         .buttonStyle(.plain)
     }
 
-    // MARK: - SECTIONS
+    // MARK: - Sections
     private var ingredientsSection: some View {
         VStack(alignment: .leading, spacing: 10) {
             ForEach(recipe.ingredients, id: \.self) { item in
@@ -148,15 +171,26 @@ struct RecipeDetailView: View {
     }
 }
 
-// MARK: - CARD STYLE
+// MARK: - Section Card Style
+// Estilo reutilizável para manter consistência visual
 private extension View {
     var sectionCard: some View {
         self
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()
             .background(Color.white)
-            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-            .shadow(color: .black.opacity(0.06), radius: 10, x: 0, y: 5)
+            .clipShape(
+                RoundedRectangle(
+                    cornerRadius: 20,
+                    style: .continuous
+                )
+            )
+            .shadow(
+                color: .black.opacity(0.06),
+                radius: 10,
+                x: 0,
+                y: 5
+            )
             .padding(.horizontal, 16)
     }
 }
