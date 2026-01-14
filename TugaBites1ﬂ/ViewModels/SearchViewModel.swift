@@ -3,42 +3,42 @@ import Combine
 
 final class SearchViewModel: ObservableObject {
 
-    // INPUT
-    @Published var searchName: String = ""
-    @Published var searchIngredient: String = ""
-    @Published var selectedCategory: Category?
-
-    // OUTPUT
+    @Published var searchQuery: String = ""
+    @Published var selectedCategory: Category? = nil
     @Published private(set) var filteredRecipes: [Recipe] = []
 
     private var allRecipes: [Recipe] = []
 
     func setRecipes(_ recipes: [Recipe]) {
-        self.allRecipes = recipes
+        allRecipes = recipes
         applyFilters()
     }
 
     func applyFilters() {
+        let q = searchQuery
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .lowercased()
+
         filteredRecipes = allRecipes.filter { recipe in
 
-            let matchesName =
-                searchName.isEmpty ||
-                recipe.name.lowercased().contains(searchName.lowercased())
+            // 1) Categoria (se estiver selecionada)
+            let matchesCategory =
+                selectedCategory == nil || recipe.category == selectedCategory
 
-            let matchesIngredient =
-                searchIngredient.isEmpty ||
-                recipe.ingredients.contains {
-                    $0.lowercased().contains(searchIngredient.lowercased())
+            // 2) Texto (nome OU ingredientes)
+            let matchesQuery: Bool = {
+                guard !q.isEmpty else { return true }
+
+                let matchesName = recipe.name.lowercased().contains(q)
+
+                let matchesIngredient = recipe.ingredients.contains { ing in
+                    ing.lowercased().contains(q)
                 }
 
-            let matchesCategory =
-                selectedCategory == nil ||
-                recipe.category == selectedCategory
+                return matchesName || matchesIngredient
+            }()
 
-            return matchesName &&
-                   matchesIngredient &&
-                   matchesCategory
+            return matchesCategory && matchesQuery
         }
     }
 }
-

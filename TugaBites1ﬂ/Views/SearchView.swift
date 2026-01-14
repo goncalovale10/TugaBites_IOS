@@ -8,8 +8,11 @@ struct SearchView: View {
     // Store de favoritos (usada nos resultados)
     @EnvironmentObject var favorites: FavoritesStore
 
-    // ViewModel responsável apenas pela lógica de pesquisa e filtros
+    // ViewModel responsável pela lógica de pesquisa e filtros
     @StateObject private var vm = SearchViewModel()
+
+    // MARK: - Animações
+    @State private var showClearBounce = false
 
     // MARK: - Colors
     private let greenDark = Color(red: 0.18, green: 0.30, blue: 0.25)
@@ -19,19 +22,12 @@ struct SearchView: View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .leading, spacing: 22) {
 
-                // MARK: - Search Fields
-                // Pesquisa por nome e por ingrediente (independentes)
+                // MARK: - Search Field (único)
                 VStack(spacing: 14) {
                     searchField(
-                        placeholder: "Search by recipe name",
-                        text: $vm.searchName,
+                        placeholder: "Search recipes or ingredients",
+                        text: $vm.searchQuery,
                         icon: "magnifyingglass"
-                    )
-
-                    searchField(
-                        placeholder: "Search by ingredient",
-                        text: $vm.searchIngredient,
-                        icon: "cart"
                     )
                 }
                 .padding(.horizontal)
@@ -40,58 +36,57 @@ struct SearchView: View {
                 categorySection
 
                 // MARK: - Results
-                // Estados diferentes consoante exista ou não pesquisa ativa
-                if vm.filteredRecipes.isEmpty {
+                Group {
+                    if vm.filteredRecipes.isEmpty {
 
-                    if vm.searchName.isEmpty &&
-                        vm.searchIngredient.isEmpty &&
-                        vm.selectedCategory == nil {
+                        if vm.searchQuery.isEmpty &&
+                            vm.selectedCategory == nil {
 
-                        // Estado inicial (sem filtros aplicados)
-                        Text("Search recipes by name, ingredient or category")
-                            .font(.system(size: 16, weight: .medium))
-                            .foregroundColor(.secondary)
-                            .frame(maxWidth: .infinity)
-                            .padding(.top, 40)
+                            Text("Search recipes by name, ingredient or category")
+                                .font(.system(size: 16, weight: .medium))
+                                .foregroundColor(.secondary)
+                                .frame(maxWidth: .infinity)
+                                .padding(.top, 40)
+                                .transition(.opacity)
+
+                        } else {
+
+                            Text("No recipes found")
+                                .foregroundColor(.secondary)
+                                .frame(maxWidth: .infinity)
+                                .padding(.top, 40)
+                                .transition(.opacity)
+                        }
 
                     } else {
 
-                        // Pesquisa ativa mas sem resultados
-                        Text("No recipes found")
-                            .foregroundColor(.secondary)
-                            .frame(maxWidth: .infinity)
-                            .padding(.top, 40)
-                    }
-
-                } else {
-
-                    // Lista de resultados filtrados
-                    LazyVStack(spacing: 16) {
-                        ForEach(vm.filteredRecipes) { recipe in
-                            NavigationLink(value: recipe) {
-                                RecipeRow(recipe: recipe)
-                                    .environmentObject(favorites)
+                        LazyVStack(spacing: 16) {
+                            ForEach(vm.filteredRecipes) { recipe in
+                                NavigationLink(value: recipe) {
+                                    RecipeRow(recipe: recipe)
+                                        .environmentObject(favorites)
+                                }
+                                .buttonStyle(.plain)
                             }
-                            .buttonStyle(.plain)
                         }
+                        .padding(.horizontal)
+                        .transition(.opacity.combined(with: .move(edge: .bottom)))
                     }
-                    .padding(.horizontal)
                 }
+                .animation(.easeInOut(duration: 0.20), value: vm.filteredRecipes.count)
+                .animation(.easeInOut(duration: 0.20), value: vm.selectedCategory)
             }
             .padding(.top, 20)
             .padding(.bottom, 30)
         }
         .background(backgroundBeige.ignoresSafeArea())
         .navigationTitle("Search")
-
-        // Injeta as receitas no ViewModel quando o ecrã aparece
         .onAppear {
             vm.setRecipes(repo.recipes)
         }
     }
 
     // MARK: - Search Field Component
-    // Campo reutilizável para manter consistência visual
     private func searchField(
         placeholder: String,
         text: Binding<String>,
@@ -106,27 +101,33 @@ struct SearchView: View {
                 .autocorrectionDisabled()
                 .onChange(of: text.wrappedValue) {
                     vm.applyFilters()
+                    withAnimation(.easeInOut(duration: 0.15)) {
+                        showClearBounce.toggle()
+                    }
                 }
 
-            // Botão de limpar texto
             if !text.wrappedValue.isEmpty {
                 Button {
-                    text.wrappedValue = ""
+                    withAnimation(.easeInOut(duration: 0.18)) {
+                        text.wrappedValue = ""
+                    }
                     vm.applyFilters()
                 } label: {
                     Image(systemName: "xmark.circle.fill")
                         .foregroundColor(.gray)
+                        .symbolEffect(.bounce, value: showClearBounce)
                 }
+                .transition(.scale.combined(with: .opacity))
             }
         }
         .padding(12)
         .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: 14))
         .shadow(color: .black.opacity(0.05), radius: 6, y: 4)
+        .animation(.easeInOut(duration: 0.18), value: text.wrappedValue.isEmpty)
     }
 
     // MARK: - Category Section
-    // Filtro horizontal por categoria
     private var categorySection: some View {
         VStack(alignment: .leading, spacing: 10) {
             Text("Category")
@@ -137,12 +138,13 @@ struct SearchView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
 
-                    // Opção "All" remove o filtro de categoria
                     filterChip(
                         label: "All",
                         isSelected: vm.selectedCategory == nil
                     ) {
-                        vm.selectedCategory = nil
+                        withAnimation(.easeInOut(duration: 0.18)) {
+                            vm.selectedCategory = nil
+                        }
                         vm.applyFilters()
                     }
 
@@ -151,8 +153,10 @@ struct SearchView: View {
                             label: category.rawValue,
                             isSelected: vm.selectedCategory == category
                         ) {
-                            vm.selectedCategory =
-                                vm.selectedCategory == category ? nil : category
+                            withAnimation(.easeInOut(duration: 0.18)) {
+                                vm.selectedCategory =
+                                    vm.selectedCategory == category ? nil : category
+                            }
                             vm.applyFilters()
                         }
                     }
@@ -163,7 +167,6 @@ struct SearchView: View {
     }
 
     // MARK: - Filter Chip
-    // Implementado inline para evitar criar uma View extra
     @ViewBuilder
     private func filterChip(
         label: String,
@@ -182,8 +185,9 @@ struct SearchView: View {
                     Capsule()
                         .stroke(greenDark, lineWidth: 1)
                 )
+                .scaleEffect(isSelected ? 1.03 : 1.0)
         }
         .buttonStyle(.plain)
+        .animation(.easeInOut(duration: 0.18), value: isSelected)
     }
 }
-
