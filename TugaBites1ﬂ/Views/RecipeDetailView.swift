@@ -5,10 +5,10 @@ struct RecipeDetailView: View {
     // Receita a apresentar
     let recipe: Recipe
 
-    // Store responsável pelos favoritos
+    // Store responsável pelos favoritos (estado global)
     @EnvironmentObject var favorites: FavoritesStore
 
-    // Tab atualmente selecionada
+    // Tab atualmente selecionada (ingredientes por defeito)
     @State private var selectedTab: Tab = .ingredients
 
     // Tabs disponíveis no detalhe da receita
@@ -22,20 +22,21 @@ struct RecipeDetailView: View {
     private let backgroundBeige = Color(red: 0.96, green: 0.94, blue: 0.90)
 
     var body: some View {
+        // Scroll vertical do conteúdo todo
         ScrollView(showsIndicators: false) {
             VStack(spacing: 18) {
 
-                // Imagem principal da receita
+                // Imagem principal da receita (com botão de favorito por cima)
                 heroImage
 
-                // Nome da receita + métricas
+                // Nome + métricas (tempo e calorias)
                 titleAndMetrics
 
-                // Alternador entre ingredientes e preparação
+                // Botões para trocar entre Ingredients e Preparation
                 tabSwitcher
                     .padding(.horizontal)
 
-                // Conteúdo dependente da tab selecionada
+                // Mostra a secção conforme a tab escolhida
                 if selectedTab == .ingredients {
                     ingredientsSection
                 } else {
@@ -46,12 +47,13 @@ struct RecipeDetailView: View {
             }
             .padding(.top, 14)
         }
+        // Fundo consistente com o resto da app
         .background(backgroundBeige.ignoresSafeArea())
         .navigationBarTitleDisplayMode(.inline)
     }
 
     // MARK: - Hero Image
-    // Usa GeometryReader para garantir proporção fixa (4:3) sem distorções
+    // Usa GeometryReader para calcular tamanho e manter proporção 4:3
     private var heroImage: some View {
         GeometryReader { geo in
             let width = geo.size.width - 32
@@ -59,6 +61,7 @@ struct RecipeDetailView: View {
 
             ZStack(alignment: .topTrailing) {
 
+                // Imagem da receita com cantos arredondados
                 Image(recipe.imageName)
                     .resizable()
                     .scaledToFill()
@@ -85,6 +88,7 @@ struct RecipeDetailView: View {
             }
             .frame(width: geo.size.width, height: height)
         }
+        // Define altura fixa para o GeometryReader não colapsar
         .frame(height: (UIScreen.main.bounds.width - 32) * 0.75)
         .padding(.horizontal, 16)
     }
@@ -93,12 +97,14 @@ struct RecipeDetailView: View {
     private var titleAndMetrics: some View {
         VStack(spacing: 10) {
 
+            // Nome da receita
             Text(recipe.name)
                 .font(.system(size: 28, weight: .bold))
                 .foregroundColor(greenDark)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
 
+            // Tempo + calorias
             HStack(spacing: 36) {
                 metric(icon: "clock", value: "\(recipe.prepTimeMinutes) min")
                 metric(icon: "flame", value: "\(recipe.calories) kcal")
@@ -106,7 +112,7 @@ struct RecipeDetailView: View {
         }
     }
 
-    // Métrica reutilizável (tempo / calorias)
+    // Componente pequeno reutilizável para métricas
     private func metric(icon: String, value: String) -> some View {
         Label(value, systemImage: icon)
             .font(.subheadline.weight(.medium))
@@ -124,6 +130,7 @@ struct RecipeDetailView: View {
         .clipShape(Capsule())
     }
 
+    // Botão individual da tab (muda selectedTab com animação)
     private func tabButton(_ title: String, _ tab: Tab) -> some View {
         Button {
             withAnimation(.easeInOut(duration: 0.2)) {
@@ -144,6 +151,8 @@ struct RecipeDetailView: View {
     }
 
     // MARK: - Sections
+
+    // Lista simples de ingredientes (bullets)
     private var ingredientsSection: some View {
         VStack(alignment: .leading, spacing: 10) {
             ForEach(recipe.ingredients, id: \.self) { item in
@@ -154,6 +163,7 @@ struct RecipeDetailView: View {
         .sectionCard
     }
 
+    // Lista de passos com numeração (1., 2., 3...)
     private var preparationSection: some View {
         VStack(alignment: .leading, spacing: 14) {
             ForEach(Array(recipe.steps.enumerated()), id: \.offset) { index, step in
@@ -172,7 +182,7 @@ struct RecipeDetailView: View {
 }
 
 // MARK: - Section Card Style
-// Estilo reutilizável para manter consistência visual
+// Extensão para aplicar o mesmo estilo “card” a Ingredients e Preparation
 private extension View {
     var sectionCard: some View {
         self
