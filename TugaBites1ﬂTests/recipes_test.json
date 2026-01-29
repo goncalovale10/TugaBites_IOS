@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Bacalhau",
+    "imageName": "test",
+    "category": "Fish",
+    "prepTimeMinutes": 10,
+    "calories": 100,
+    "ingredients": ["bacalhau"],
+    "steps": ["cozer"]
+  },
+  {
+    "id": 2,
+    "name": "   ",
+    "imageName": "test",
+    "category": "Fish",
+    "prepTimeMinutes": 10,
+    "calories": 100,
+    "ingredients": ["x"],
+    "steps": ["y"]
+  }
+]

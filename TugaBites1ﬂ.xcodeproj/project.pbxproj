@@ -6,11 +6,27 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		8C71BFC02F2B9148007B53E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CAD7B332ED9AAEB00835BA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8CAD7B3A2ED9AAEB00835BA3;
+			remoteInfo = "TugaBites1ﬂ";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		8C71BFBC2F2B9148007B53E1 /* TugaBites1ﬂTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TugaBites1ﬂTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CAD7B3B2ED9AAEB00835BA3 /* TugaBites1ﬂ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TugaBites1ﬂ.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		8C71BFBD2F2B9148007B53E1 /* TugaBites1ﬂTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "TugaBites1ﬂTests";
+			sourceTree = "<group>";
+		};
 		8CAD7B3D2ED9AAEB00835BA3 /* TugaBites1ﬂ */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "TugaBites1ﬂ";
@@ -19,6 +35,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8C71BFB92F2B9148007B53E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8CAD7B382ED9AAEB00835BA3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -33,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				8CAD7B3D2ED9AAEB00835BA3 /* TugaBites1ﬂ */,
+				8C71BFBD2F2B9148007B53E1 /* TugaBites1ﬂTests */,
 				8CAD7B3C2ED9AAEB00835BA3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				8CAD7B3B2ED9AAEB00835BA3 /* TugaBites1ﬂ.app */,
+				8C71BFBC2F2B9148007B53E1 /* TugaBites1ﬂTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,6 +73,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8C71BFBB2F2B9148007B53E1 /* TugaBites1ﬂTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C71BFC42F2B9148007B53E1 /* Build configuration list for PBXNativeTarget "TugaBites1ﬂTests" */;
+			buildPhases = (
+				8C71BFB82F2B9148007B53E1 /* Sources */,
+				8C71BFB92F2B9148007B53E1 /* Frameworks */,
+				8C71BFBA2F2B9148007B53E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8C71BFC12F2B9148007B53E1 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				8C71BFBD2F2B9148007B53E1 /* TugaBites1ﬂTests */,
+			);
+			name = "TugaBites1ﬂTests";
+			packageProductDependencies = (
+			);
+			productName = "TugaBites1ﬂTests";
+			productReference = 8C71BFBC2F2B9148007B53E1 /* TugaBites1ﬂTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		8CAD7B3A2ED9AAEB00835BA3 /* TugaBites1ﬂ */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8CAD7B462ED9AAEC00835BA3 /* Build configuration list for PBXNativeTarget "TugaBites1ﬂ" */;
@@ -77,9 +125,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 2610;
+				LastSwiftUpdateCheck = 2620;
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
+					8C71BFBB2F2B9148007B53E1 = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = 8CAD7B3A2ED9AAEB00835BA3;
+					};
 					8CAD7B3A2ED9AAEB00835BA3 = {
 						CreatedOnToolsVersion = 26.1.1;
 					};
@@ -100,11 +152,19 @@
 			projectRoot = "";
 			targets = (
 				8CAD7B3A2ED9AAEB00835BA3 /* TugaBites1ﬂ */,
+				8C71BFBB2F2B9148007B53E1 /* TugaBites1ﬂTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		8C71BFBA2F2B9148007B53E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8CAD7B392ED9AAEB00835BA3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,6 +175,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8C71BFB82F2B9148007B53E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8CAD7B372ED9AAEB00835BA3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,7 +191,59 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		8C71BFC12F2B9148007B53E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8CAD7B3A2ED9AAEB00835BA3 /* TugaBites1ﬂ */;
+			targetProxy = 8C71BFC02F2B9148007B53E1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		8C71BFC22F2B9148007B53E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 98TUBP2YSX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.goncalovale.TugaBites1-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TugaBites1ﬂ.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TugaBites1ﬂ";
+			};
+			name = Debug;
+		};
+		8C71BFC32F2B9148007B53E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 98TUBP2YSX;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.goncalovale.TugaBites1-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TugaBites1ﬂ.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TugaBites1ﬂ";
+			};
+			name = Release;
+		};
 		8CAD7B442ED9AAEC00835BA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -315,6 +434,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8C71BFC42F2B9148007B53E1 /* Build configuration list for PBXNativeTarget "TugaBites1ﬂTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C71BFC22F2B9148007B53E1 /* Debug */,
+				8C71BFC32F2B9148007B53E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8CAD7B362ED9AAEB00835BA3 /* Build configuration list for PBXProject "TugaBites1ﬂ" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
