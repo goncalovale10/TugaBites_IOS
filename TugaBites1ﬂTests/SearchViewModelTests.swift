@@ -23,92 +23,112 @@ final class SearchViewModelTests: XCTestCase {
 
     func testFilterByCategoryOnly() {
         // Arrange
-        let vm = SearchViewModel()
+        let viewModel = SearchViewModel()
         let recipes = [
             makeRecipe(id: 1, name: "Bacalhau à Brás", category: .fish, ingredients: ["bacalhau", "ovo"]),
-            makeRecipe(id: 2, name: "Leitão", category: .meat, ingredients: ["carne de porco"])
+            makeRecipe(id: 2, name: "Leitão", category: .meat, ingredients: ["pork"])
         ]
 
         // Act
-        vm.setRecipes(recipes)
-        vm.selectedCategory = .fish
-        vm.searchQuery = ""
-        vm.applyFilters()
+        viewModel.setRecipes(recipes)
+        viewModel.selectedCategory = .fish
+        viewModel.searchQuery = ""
+        viewModel.applyFilters()
 
         // Assert
-        XCTAssertEqual(vm.filteredRecipes.map(\.id), [1], "Devia filtrar apenas por categoria.")
+        XCTAssertEqual(
+            viewModel.filteredRecipes.map(\.id),
+            [1],
+            "It should filter recipes only by category."
+        )
     }
 
     func testSearchByNameIsCaseInsensitive() {
         // Arrange
-        let vm = SearchViewModel()
+        let viewModel = SearchViewModel()
         let recipes = [
             makeRecipe(id: 1, name: "Bacalhau à Brás", category: .fish, ingredients: ["x"]),
             makeRecipe(id: 2, name: "Arroz Doce", category: .dessert, ingredients: ["y"])
         ]
 
         // Act
-        vm.setRecipes(recipes)
-        vm.selectedCategory = nil
-        vm.searchQuery = "BACALHAU"
-        vm.applyFilters()
+        viewModel.setRecipes(recipes)
+        viewModel.selectedCategory = nil
+        viewModel.searchQuery = "BACALHAU"
+        viewModel.applyFilters()
 
         // Assert
-        XCTAssertEqual(vm.filteredRecipes.map(\.id), [1], "Devia encontrar por nome sem depender de maiúsculas/minúsculas.")
+        XCTAssertEqual(
+            viewModel.filteredRecipes.map(\.id),
+            [1],
+            "It should match recipe names regardless of letter case."
+        )
     }
 
     func testSearchByIngredientMatchesSubstring() {
         // Arrange
-        let vm = SearchViewModel()
+        let viewModel = SearchViewModel()
         let recipes = [
             makeRecipe(id: 1, name: "Caldo Verde", category: .soup, ingredients: ["kale", "chouriço"]),
-            makeRecipe(id: 2, name: "Salada", category: .other, ingredients: ["tomate", "azeite"])
+            makeRecipe(id: 2, name: "Salada", category: .other, ingredients: ["tomato", "olive oil"])
         ]
 
         // Act
-        vm.setRecipes(recipes)
-        vm.selectedCategory = nil
-        vm.searchQuery = "chouri"
-        vm.applyFilters()
+        viewModel.setRecipes(recipes)
+        viewModel.selectedCategory = nil
+        viewModel.searchQuery = "oil"
+        viewModel.applyFilters()
 
         // Assert
-        XCTAssertEqual(vm.filteredRecipes.map(\.id), [1], "Devia encontrar por ingrediente usando substring.")
+        XCTAssertEqual(
+            viewModel.filteredRecipes.map(\.id),
+            [2],
+            "It should find recipes by ingredient using substring matching."
+        )
     }
 
     func testCombinedCategoryAndSearchQuery() {
         // Arrange
-        let vm = SearchViewModel()
+        let viewModel = SearchViewModel()
         let recipes = [
-            makeRecipe(id: 1, name: "Bacalhau com Natas", category: .fish, ingredients: ["batata", "bacalhau"]),
-            makeRecipe(id: 2, name: "Bacalhau à Brás", category: .fish, ingredients: ["bacalhau", "ovo"]),
-            makeRecipe(id: 3, name: "Francesinha", category: .meat, ingredients: ["carne", "pão"])
+            makeRecipe(id: 1, name: "Bacalhau com Natas", category: .fish, ingredients: ["potato", "bacalhau"]),
+            makeRecipe(id: 2, name: "Bacalhau à Brás", category: .fish, ingredients: ["bacalhau", "egg"]),
+            makeRecipe(id: 3, name: "Francesinha", category: .meat, ingredients: ["meat", "bread"])
         ]
 
         // Act
-        vm.setRecipes(recipes)
-        vm.selectedCategory = .fish
-        vm.searchQuery = "brás"
-        vm.applyFilters()
+        viewModel.setRecipes(recipes)
+        viewModel.selectedCategory = .fish
+        viewModel.searchQuery = "brás"
+        viewModel.applyFilters()
 
         // Assert
-        XCTAssertEqual(vm.filteredRecipes.map(\.id), [2], "Devia combinar filtro de categoria + texto.")
+        XCTAssertEqual(
+            viewModel.filteredRecipes.map(\.id),
+            [2],
+            "It should combine category and text filters."
+        )
     }
 
     func testWhitespaceQueryIsTreatedAsEmpty() {
         // Arrange
-        let vm = SearchViewModel()
+        let viewModel = SearchViewModel()
         let recipes = [
             makeRecipe(id: 1, name: "A", category: .other, ingredients: ["x"]),
             makeRecipe(id: 2, name: "B", category: .other, ingredients: ["y"])
         ]
 
         // Act
-        vm.setRecipes(recipes)
-        vm.selectedCategory = nil
-        vm.searchQuery = "   \n "
-        vm.applyFilters()
+        viewModel.setRecipes(recipes)
+        viewModel.selectedCategory = nil
+        viewModel.searchQuery = "   \n "
+        viewModel.applyFilters()
 
         // Assert
-        XCTAssertEqual(vm.filteredRecipes.count, 2, "Texto vazio/whitespace devia devolver todas as receitas.")
+        XCTAssertEqual(
+            viewModel.filteredRecipes.count,
+            2,
+            "An empty or whitespace-only query should return all recipes."
+        )
     }
 }

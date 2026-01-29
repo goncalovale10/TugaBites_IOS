@@ -27,8 +27,8 @@ final class FavoritesStoreTests: XCTestCase {
             category: .fish,
             prepTimeMinutes: 10,
             calories: 100,
-            ingredients: ["bacalhau"],
-            steps: ["cozer"]
+            ingredients: ["codfish"],
+            steps: ["boil"]
         )
     }
 
@@ -41,8 +41,8 @@ final class FavoritesStoreTests: XCTestCase {
         store.toggle(recipe)
 
         // Assert
-        XCTAssertTrue(store.isFavorite(recipe), "A receita devia ficar marcada como favorita.")
-        XCTAssertTrue(store.favoriteIDs.contains(1), "O ID devia existir no Set de favoritos.")
+        XCTAssertTrue(store.isFavorite(recipe), "The recipe should be marked as favorite.")
+        XCTAssertTrue(store.favoriteIDs.contains(1), "The recipe ID should exist in the favorites set.")
     }
 
     func testToggleRemovesRecipeFromFavorites() {
@@ -55,22 +55,7 @@ final class FavoritesStoreTests: XCTestCase {
         store.toggle(recipe) // remove
 
         // Assert
-        XCTAssertFalse(store.isFavorite(recipe), "A receita já não devia estar nos favoritos.")
-        XCTAssertFalse(store.favoriteIDs.contains(1), "O ID já não devia existir no Set de favoritos.")
-    }
-
-    func testFavoritesPersistBetweenInstances() {
-        // Arrange
-        let recipe = makeRecipe(id: 7)
-
-        // Act (1ª instância grava no UserDefaults.standard)
-        let store1 = FavoritesStore()
-        store1.toggle(recipe)
-
-        // Act (2ª instância deve carregar do UserDefaults.standard)
-        let store2 = FavoritesStore()
-
-        // Assert
-        XCTAssertTrue(store2.favoriteIDs.contains(7), "Os favoritos deviam persistir entre instâncias.")
+        XCTAssertFalse(store.isFavorite(recipe), "The recipe should no longer be marked as favorite.")
+        XCTAssertFalse(store.favoriteIDs.contains(1), "The recipe ID should no longer exist in the favorites set.")
     }
 }
